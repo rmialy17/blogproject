@@ -1,7 +1,7 @@
 # Ignore docs files
-_gh_pages
-_site
-.ruby-version
+/_site/
+# Hugo resources folder
+/resources/
 
 # Numerous always-ignore extensions
 *.diff
@@ -28,16 +28,14 @@ _site
 *.sublime-workspace
 nbproject
 Thumbs.db
+/.vscode/
+# Local Netlify folder
+.netlify
 
 # Komodo
 .komodotools
 *.komodoproject
 
-# Jekyll metadata
-docs/.jekyll-metadata
-
 # Folders to ignore
-/.bundle/
-bower_components
-node_modules
-/vendor/
+/js/coverage/
+/node_modules/

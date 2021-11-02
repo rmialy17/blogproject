@@ -73,15 +73,21 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
-                    <a class="navbar-brand smoothie logo logo-light" href="bloghome.php"><img src="assets/img/logo/logo_white_large.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="bloghome.php"><img src="assets/img/logo/logo_large.png" alt="logo"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand smoothie logo logo-light" href="bloghome.html"><img src="assets/img/logo.png"alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="bloghome.html"><img src="assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown" >
-                            <a href="bloghome.php" class="dropdown-toggle" data-hover="dropdown">Accueil</span></a>
+                            <a href="../templates/bloghome.php" class="dropdown-toggle" data-hover="dropdown">Accueil</span></a>
                                 </li>
                                 
                         <li class="dropdown">
@@ -99,9 +105,6 @@
                         </li>
                         <li class="dropdown">
                             <a href="#contact-tabs" class="dropdown-toggle" data-hover="dropdown">Contact</a>
-                        </li>
-                         <li class="dropdown">
-                            <a href="../public/index.php?route=login" class="dropdown-toggle" data-hover="dropdown">Connexion</a>
                         </li>  
                         
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -490,7 +493,7 @@
                 </div>
         </section>
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll"data-image-src="assets/img/bg/bg6.jpg" data-speed="0.7" >
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll"data-image-src="../templates/assets/img/bg/bg6.jpg" data-speed="0.7" >
             <div class="contact-tabs" id="contact-tabs" role="tabpanel">
 
                 <!-- Nav tabs -->
@@ -568,7 +571,7 @@
                         </div>
                     </div>
 
-                    <p class="mt30"><a href= "../public/index.php?route=login" class="btn btn-primary btn-theme page-scroll "target="blank">Voir les blog posts</a></p>
+                    <p class="mt30"><a href="../public/index.php?route=login"  class="btn btn-primary btn-theme page-scroll "target="blank">Voir les blog posts</a></p>
                 </div>
             </div>
         </section>

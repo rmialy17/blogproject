@@ -1,12 +1,13 @@
 {
  "autoload": {
   "psr-4":{
+    "App\\templates\\":"templates",
       "App\\src\\":"src/",
       "App\\config\\":"config/"
     }
  },
   "require": {
     "ext-pdo": "*",
-  "twbs/bootstrap": "3.4.1"
+  "twbs/bootstrap": "5.1.3"
   }
 }

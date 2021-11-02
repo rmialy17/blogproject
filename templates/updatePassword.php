@@ -10,7 +10,7 @@
         <label for="password">Nouveau mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
         <?= isset($errors) ? $errors['password'] : ''?>
-        <input type="submit" value="Mettre à jour" id="submit" name="submit">
+        <br><input type="submit" value="Mettre à jour" id="submit" name="submit">
     </form>
 </div>
 <br>

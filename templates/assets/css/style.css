@@ -509,6 +509,7 @@ fieldset[disabled] .btn-primary.active {
 .navbar-shrink .navbar-brand.logo-light {
     display: none;
     opacity: 0;
+    height: 100%;
 }
 
 .navbar-shrink .navbar-brand.logo-dark {
@@ -2412,8 +2413,6 @@ footer.white-wrapper .social-links li a {
     margin-bottom: 30px;
 }
 
-
-
-.flag {
-  color: #e74c4c;
+#headerwrap{
+    background-image: url('../templates/assets/img/bg/bg2.jpg');
 }
