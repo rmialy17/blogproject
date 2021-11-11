@@ -117,7 +117,7 @@
                             <a href="../templates/bloghome.php#contact-tabs" class="dropdown-toggle" >Contact</a> 
                         </li>
                         <li class="dropdown">
-                            <a href="../public/index.php?route=login" class="dropdown-toggle" >Blog</a>
+                            <a href="../public/index.php?route=home" class="dropdown-toggle" >Blog</a>
                         </li>
                        
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -131,22 +131,20 @@
 
 
    <!-- Header -->
-           <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
-            <div class="section-inner text-center">
+          <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg" data-speed="0.7">
+            <div class="section-inner pad-top-200">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 mt30 wow">
-                                
-                            <?= $content ?>
+                        <div class="col-lg-12 mt30 wow text-center">
+                            <h2 class="section-heading">ESPACE BLOG POSTS</h2>
                         </div>
                     </div>
                 </div>
-            </div> 
-
+            </div>
         </section>
 <!-----------------------------fin header------------->
   
-        <section id="welcome" >
+        <!-- <section id="welcome" >
             <div class="section-inner nopaddingbottom" id="quisuisje">
 
                 <div class="container" >
@@ -156,19 +154,17 @@
                             <h3 class="section-subheading secondary-font">Développeuse d'applications</h3>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat excepturi est laboriosam beatae quo provident quae ut vero distinctio ut voluptatem minima.</p>
-                            <p class="lead">Ut vitae maxime et iure alias ut quaerat sequi. Rem harum nulla et harum pariatur eos blanditiis sequi aut soluta quia id obcaecati voluptas et harum ipsa est dicta maxime.</p>
-                            <p class="mt30"><a href="../document/CV.pdf"  class="btn btn-primary btn-theme page-scroll "target="blank">Télécharger mon CV</a></p>
+
+                         <?= $content ?>
+
                         </div>
 
-                        <div class="col-md-6">
-                            <img src="../templates/assets/img/isometric-ipad-white.png" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -181,7 +177,7 @@
        
 
 
-        <section class="dark-wrapper">
+     <!--    <section class="dark-wrapper">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
@@ -238,43 +234,108 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <footer class="white-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <ul class="list-inline social-links wow">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <hr class="thin-hr" />
-
-                    <div class="col-md-12 text-center wow">
-                        <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
+        <!----------------------footer-------------------------->
+<section>
+        <div id="footer-wrapper" class="dark-footer-image-bg">
+            <section class="dark-wrapper">
+                <div class="section-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="widget about-us-widget">
+                                    <h4 class="widget-title"><strong>Global</strong> Coverage</h4>
+                                    <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
+                                    <div>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="media-heading"><a href="#">Blog Post A</a></span>
+                                                <small class="muted">Posted 14 April 2015</small>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="media-heading"><a href="#">Blog Post B</a></span>
+                                                <small class="muted">Posted 14 April 2015</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <h4 class="widget-title">Popular Tags</h4>
+                                    <div class="tagcloud">
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Local</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Business</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Media</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Photogtraphy</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Aid</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Fashion</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">News</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Cars</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Global Affairs</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Music</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Downloads</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">MP3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </section>
 
+            <footer class="white-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <ul class="list-inline social-links wow">
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-behance"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 text-right">
+                            <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+</section>
+
+<!--------------------- footer end--------------------->
      
      <script src="../templates/assets/js/bootstrap.min.js"></script>
      <script src="../templates/assets/js/jquery.js" type="text/javascript"></script>

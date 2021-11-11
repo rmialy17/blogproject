@@ -134,7 +134,7 @@ class BackController extends Controller
                 $errors = $this->validation->validate($post, 'User');
                 if (!$errors) {
                     $this->userDAO->updatePassword($post, $this->session->get('user'));
-                    $this->session->set('update_password', 'Le mot de passe à bien été mis à jour');
+                    $this->session->set('update_password', 'Le mot de passe à bien été modifié');
                     header('Location: ../public/index.php?route=profile');
                 } else {
                     $this->view->render('updatePassword', [
@@ -170,7 +170,7 @@ class BackController extends Controller
             $this->session->destroy();
             $this->session->start();
             $this->session->set('delete_account', 'Votre compte à bien été supprimé');
-            header('Location: ../public/index.php');
+            header('Location: ../public/index.php?route=home');
         }
     }
 
