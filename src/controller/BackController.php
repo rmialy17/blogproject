@@ -26,9 +26,9 @@ class BackController extends Controller
                 if (!$errors) {
                     $this->articleDAO->addArticle($post, $this->session->getUserInfo('id'));
                     //Création d'un message à afficher dans la session
-                    $this->session->set('add_article', 'Le nouvel article à bien été ajouté');
+                    $this->session->set('add_article', 'Le nouveau post à bien été ajouté');
                     //TODO: Redirection vers l'article crée : nécessite de récupérer son id après création
-                    header('Location: ../public/index.php?route=administration');
+                    header('Location: ../public/index.php?route=home');
                 } else {
                     //Si il y a des erreurs, tjrs en modification avec données et errors en plus
                     $this->view->render('add_article', [
@@ -61,8 +61,8 @@ class BackController extends Controller
                 if (!$errors) {
                     var_dump($this->session);
                     $this->articleDAO->editArticle($post, $articleId, $this->session->getUserInfo('id'));
-                    $this->session->set('edit_article', 'L\'article à bien été mis à jour');
-                    header('Location: ../public/index.php?route=administration');
+                    $this->session->set('edit_article', 'Le blog post à bien été mis à jour');
+                    header('Location: ../public/index.php?route=home');
                 } else {
                     //Si il y a des erreurs, affichage avec les données soumises et erreurs
                     $this->view->render('edit_article', [
@@ -212,7 +212,7 @@ class BackController extends Controller
     private function checkLoggedIn()
     {
         if(!$this->session->getUserInfo('pseudo')) {
-            $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
+            $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette action.');
             header('Location: ../public/index.php?route=login');
         } else {
             return true;
@@ -230,5 +230,43 @@ class BackController extends Controller
         }
     }
 
+ public function addComment(Parameter $post, $articleId)
+    {
+        if ($this->checkLoggedIn()) {
+        $post->trimAll();
+        $article = $this->articleDAO->getArticle($articleId);
+        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+
+        //Si formulaire POST soumis, on insère le commentaire si les données sont valides
+        if ($post->get('submit')) {
+            $errors = $this->validation->validate($post, 'Comment');
+            if (!$errors) {
+                $this->commentDAO->addComment($post, $articleId);
+                $this->session->set('add_comment', 'Votre commentaire à bien été ajouté');
+                header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+            } else {
+                $this->view->render('single', [
+                    'article' => $article,
+                    'comments' => $comments,
+                    'errors' => $errors,
+                    'post' => $post
+                ]);
+            }
+        } else {
+            //Si aucun formulaire soumis, redirection vers home
+            header('Location: ../public/index.php');
+        }
+    }
+}
+    /**
+     * Signalement d'un commentaire par un utilisateur
+     * @param $commentId mixed Identifiant du commentaire
+     */
+    public function flagComment($commentId)
+    {
+        $this->commentDAO->flagComment($commentId);
+        $this->session->set('flag_comment', 'Le commentaire à bien été signalé, merci');
+        header('Location: ../public/index.php?route=home');
+    }
 
 }

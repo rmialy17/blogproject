@@ -14,7 +14,10 @@ class ArticleValidation extends Validation
             $error = $this->checkTitle($name, $value);
             //Ajoute une erreur si rencontrée
             $this->addError($name, $error);
-        } elseif ($name === 'content') {
+        } elseif ($name === 'chapo') {
+            $error = $this->checkChapo($name, $value);
+            $this->addError($name, $error);
+        } elseif($name === 'content') {
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
         }
@@ -37,6 +40,26 @@ class ArticleValidation extends Validation
         }
         if ($this->constraint->maxLength($name, $value, 100)) {
             return $this->constraint->maxLength($name, $value, 100);
+        }
+    }
+
+     /**
+     * Validation d'un contenu suivant : non nul, longueur mini de 2, longueur maxi 4000
+     * @param $name string Nom de la propriété
+     * @param $value mixed Valeur de la propriété
+     * @return string Contenu textuel si erreur
+     */
+    private function checkChapo($name, $value)
+    {
+        //Si constraint renvoie qqchose, c'est le message d'erreur
+        if ($this->constraint->notBlank($name, $value)) {
+            return $this->constraint->notBlank($name, $value);
+        }
+        if ($this->constraint->minLength($name, $value, 2)) {
+            return $this->constraint->minLength($name, $value, 2);
+        }
+        if ($this->constraint->maxLength($name, $value, 400)) {
+            return $this->constraint->minLength($name, $value, 400);
         }
     }
 

@@ -22,7 +22,8 @@ class Constraint
     public function notBlank($name, $value)
     {
         if (empty($value) || trim($value) === '') {
-            return "<p>Le champ $name saisi ne doit pas être vide</p>";
+            // return "<p>Le champ $name saisi ne doit pas être vide</p>";
+            return "<p style='color:red;'>Le champ $name ne doit pas être vide.</p>";
         }
     }
 
@@ -36,7 +37,7 @@ class Constraint
     public function minLength($name, $value, $minSize)
     {
         if (strlen($value) < $minSize) {
-            return "<p>Le champ $name doit contenir au moins $minSize caractères.</p>";
+            return "<p style='color:red;'>Le champ $name doit contenir au moins $minSize caractères.</p>";
         }
     }
 
@@ -50,7 +51,7 @@ class Constraint
     public function maxLength($name, $value, $maxSize)
     {
         if (strlen($value) > $maxSize) {
-            return "<p>Le champs $name ne peut contenir plus de $maxSize caractères.</p>";
+            return "<p style='color:red;'>Le champs $name ne peut contenir plus de $maxSize caractères.</p>";
         }
     }
 

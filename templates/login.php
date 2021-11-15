@@ -24,7 +24,7 @@
         <br><input type="submit" style="color: black;"value="Connexion" id="submit" name="submit">
         </form>
            <br><p><span class="meta-item" ><i class="pe-icon pe-7s-folder"style="color:#303030;"></i><a href="../public/index.php?route=register"><strong> Pas encore inscrit ? </strong><span class="meta-item" style="color:#303030;">C'est par ici</span></span></a></p>
-         <p><span class="meta-item"><i class="pe-icon pe-7s-ticket"></i><a href="../public/index.php"><span> Retour à l'accueil</a></span></span></p>
+         <p><span class="meta-item"><i class="pe-icon pe-7s-ticket"></i><a href="../public/index.php?route=home"><span> Retour aux blog posts</a></span></span></p>
     
  
                         

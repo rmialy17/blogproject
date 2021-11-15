@@ -11,9 +11,11 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                     </div>
                     <div id="comment_message"></div>
                     <form action="../public/index.php?route=<?= $route; ?>&articleId=<?= htmlspecialchars($article->getId()) ?>" method="post">
+                   
+                     <p style="margin-left:3%;"><strong>VOTRE PSEUDO * : <input for="pseudo" style="border: none;outline: none;" id="commentform" name="pseudo"  value="<?= $this->session->getUserInfo('pseudo') ?>" readOnly="readOnly"></strong></p>
+                           <!-- value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : ''; ?>"> -->
 
-                    <input type="text" for="pseudo" class="form-control col-md-4" id="commentform" class="comment-form"name="pseudo" id="name1" placeholder="Votre pseudo *"
-                           value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : ''; ?>">
+                           
                
                     <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
 
@@ -21,6 +23,7 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
                     <input type="submit" class="btn btn-primary pull-right" value="<?= $submit; ?>" name="submit" id="submit">
+                   <!--  <input type="hidden" name="id[]" value=""> -->
                     </form> 
 
                     <p>*Champs obligatoires</p>

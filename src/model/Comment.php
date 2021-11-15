@@ -12,6 +12,7 @@ class Comment
     private $content;
     private $createdAt;
     private $flag;
+    private $article_id;
 
     public function getId()
     {
@@ -61,5 +62,15 @@ class Comment
     public function setFlag($flag)
     {
         $this->flag = $flag;
+    }
+
+    public function getArticleId()
+    {
+        return $this->article_id;
+    }
+
+    public function setArticleId($article_id)
+    {
+        $this->article_id = $article_id;
     }
 }

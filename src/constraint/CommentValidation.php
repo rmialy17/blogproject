@@ -17,17 +17,26 @@ class CommentValidation extends Validation
      * @param $name string Nom de la donnée
      * @param $value mixed  Valeur de la donnée
      */
-    public function checkField($name, $value)
+    // public function checkField($name, $value)
+    // {
+    //     if ($name === 'pseudo') {
+    //         //Appel à la validation des titres
+    //         $error = $this->checkPseudo($name, $value);
+    //         //Ajoute une erreur si rencontrée
+    //         $this->addError($name, $error);
+    //     } elseif ($name === 'content') {
+    //         $error = $this->checkContent($name, $value);
+    //         $this->addError($name, $error);
+    //     }
+    // }
+
+    public function checkField($name,$value)
     {
-        if ($name === 'pseudo') {
-            //Appel à la validation des titres
-            $error = $this->checkPseudo($name, $value);
-            //Ajoute une erreur si rencontrée
-            $this->addError($name, $error);
-        } elseif ($name === 'content') {
+        
+        if ($name === 'content') {
             $error = $this->checkContent($name, $value);
-            $this->addError($name, $error);
-        }
+            $this->addError($name, $error);}
+        
     }
 
     /**
@@ -50,23 +59,24 @@ class CommentValidation extends Validation
         }
     }
 
+
     /**
      * Validation d'un pseudo suivant : non nul, longueur mini de 2, longueur maxi de 100
      * @param $name string Nom de la propriété
      * @param $value mixed Valeur de la propriété
      * @return string Contenu textuel si erreur
      */
-    private function checkPseudo($name, $value)
-    {
-        //Si constraint renvoie qqchose, c'est le message d'erreur
-        if ($this->constraint->notBlank($name, $value)) {
-            return $this->constraint->notBlank($name, $value);
-        }
-        if ($this->constraint->minLength($name, $value, 2)) {
-            return $this->constraint->minLength($name, $value, 2);
-        }
-        if ($this->constraint->maxLength($name, $value, 100)) {
-            return $this->constraint->maxLength($name, $value, 100);
-        }
-    }
+    // private function checkPseudo($name, $value)
+    // {
+    //     //Si constraint renvoie qqchose, c'est le message d'erreur
+    //     if ($this->constraint->notBlank($name, $value)) {
+    //         return $this->constraint->notBlank($name, $value);
+    //     }
+    //     if ($this->constraint->minLength($name, $value, 2)) {
+    //         return $this->constraint->minLength($name, $value, 2);
+    //     }
+    //     if ($this->constraint->maxLength($name, $value, 100)) {
+    //         return $this->constraint->maxLength($name, $value, 100);
+    //     }
+    // }
 }

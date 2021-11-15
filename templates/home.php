@@ -2,10 +2,12 @@
 
  
 <h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
+<?= $this->session->show('add_article');?>
+<?= $this->session->show('edit_article');?>
 <?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('register'); ?>
-<?= $this->session->show('login_message'); ?>
+<?= $this->session->show('flag_comment');?>
+<?= $this->session->show('register');?>
+<?= $this->session->show('login_message');?>
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('delete_account'); ?></h2>
 

@@ -1,8 +1,6 @@
 <?php $this->title = 'Administration'; ?>
 
 <?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
@@ -15,6 +13,10 @@
     <!-- Custom CSS -->
     <link href="../templates/assets/css/admin.css" rel="stylesheet">
 
+
+<!-- fichier datatables -->
+
+<link rel="stylesheet" type="text/css" href="../templates/assets/DataTables/media/css/jquery.dataTables.min.css">
 
    <!------ Include the above in your HEAD tag ----------> 
 
@@ -35,22 +37,27 @@
                                 <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
                                 <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Commentaires</button>
                                 <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button>
-                                <button type="button" class="btn btn-default btn-filter" data-target="#">Droits</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="cancelado2">Droits</button>
                                 <button type="button" class="btn btn-default btn-filter" data-target="all">Tout</button>
                             </div>
+
                         </div>
-                        <div class="table-container">
-                            <table class="table table-filter"style="width: 150%;">
-                                <tbody>
-                                    <tr data-status="pagado">
-                                        <div>
+                        <div class="table-container" >
+
+                            <table id="tab"class="table table-filter"style="width: 150%;">
+                                
+
+                                 <thead><th>Gestion des blog posts</th>
+                                    <tr data-status="pagado">  
+
                                         <td style="width: 42%;">Titre</td>
                                         <td style="width: 20%;">Auteur</td>
                                         <td style="width: 20%;">Date/Heure</td>
                                         <td style="width: 30%;">Actions</td>
-                                        </div>
                                     </tr>  
-                                   
+                                   </thead> 
+                                   <tbody> 
+                                    
                                           <?php
                                     foreach ($articles as $article)
                                     {
@@ -59,8 +66,8 @@
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
-                                                    <h4 class="title"href="../public/index.php?route=article&amp;articleId=<?= htmlspecialchars($article->getId())?>"><?= htmlspecialchars($article->getTitle()); ?>
-                                                    </h4>
+                                                    <h4><a class="title"href="../public/index.php?route=article&amp;articleId=<?= htmlspecialchars($article->getId())?>"><?= htmlspecialchars($article->getTitle()); ?>
+                                                    </a></h4>
                                                     <p class="summary"><?= htmlspecialchars($article->getChapo());?></p>
                                                     <td><span class="pull-left"><?= htmlspecialchars($article->getAuthor());?></span></td>
                                                     <td><?= htmlspecialchars($article->getCreatedAt());?></td>
@@ -73,19 +80,28 @@
                                             </div>
                                         </td>
                                     </tr>
-                                         <?php
-        }
-        ?>
+                                <?php
+                                }
+                                ?>
+                               <!--  </tbody>
+                        </table>
+                    </div>
 
+
+                    <div class="table-container">
+                        <table id=""class="table table-filter"style="width: 150%;">
+                            <tbody> -->
+                                <thead>
                                     <tr data-status="pendiente">
-                                        <div>
+
                                         <td style="width: 30%;">Pseudo</td>
-                                        <td style="width: 15%;">Référence</td>
+                                        <td style="width: 15%;">Réf.</td>
                                         <td style="width: 30%;">Message</td>
                                         <td style="width: 20%;">Date/Heure</td>
+                                       <td style="width: 30%;">Réf.Article associé</td>
                                         <td style="width: 30%;">Actions</td>
-                                        </div>
-                                    </tr> 
+                                    </tr>
+                                </thead> 
                                     <?php
                                 foreach ($comments as $comment)
                                 {
@@ -97,11 +113,13 @@
                                                     
                                                     <h4 class="title">
                                                         <?= htmlspecialchars($comment->getPseudo());?>
+                                                        <!-- <?= $this->session->getUserInfo('id') ?> -->
                                                     </h4>
                                                     <td><?= htmlspecialchars($comment->getId());?></td>
                                                     <p class="summary"></p>
                                                     <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
-                                                    <td><?= htmlspecialchars($comment->getCreatedAt());?></td>
+                                                 <td><?= htmlspecialchars($comment->getCreatedAt());?></td>
+                                                 <td><a href="../public/index.php?route=article&amp;articleId=<?= htmlspecialchars($comment->getArticleId());?>"><?= htmlspecialchars($comment->getArticleId());?></a></td>
                                                     <td>
             <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler</a>
             <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
@@ -113,16 +131,24 @@
                                         <?php
                                 }
                                 ?>
+                           <!--  </tbody> 
 
-                                <tr data-status="cancelado">
-                                        <div>
+                      </table>
+                    </div>
+
+                    <div class="table-container">
+                         <table id=""class="table table-filter"style="width: 150%;">
+
+                            <tbody> -->
+                                <thead>
+                                    <tr data-status="cancelado">
                                         <td style="width: 30%;">Pseudo</td>
                                         <td style="width: 15%;">Référence</td>
                                         <td style="width: 30%;">Date création</td>
                                         <td style="width: 20%;">Rôle</td>
                                         <td style="width: 30%;">Actions</td>
-                                        </div>
-                                    </tr>
+                                    </tr>    
+                                </thead>
                                     <?php
                                     foreach ($users as $user)
                                     {
@@ -158,6 +184,43 @@
                             <?php
                         }
                         ?>
+                                            <tr data-status="cancelado2">
+                                        <td>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                   <form class="box" action="" method="post">
+                                                      <h4 class="box-title">
+                                                        Gestion des droits
+                                                      </h4>
+                                                    
+                                                      <br><input type="text" class="box-input" name="pseudo" 
+                                                      placeholder="Nom d'utilisateur" required />
+                                                      
+                                                      <!-- <input type="text" class="box-input" name="email" 
+                                                      placeholder="Email" required /> -->
+                                                      
+                                                      <div>
+                                                          <br><select class="box-input" name="type" id="type" >
+                                                         <option value="" disabled selected>Type</option> 
+                                                            <option value="admin">Admin</option>
+                                                            <option value="user">User</option>
+                                                            <?php 
+                                                            if (value === 'admin'){ 
+                                                            $sql = 'UPDATE user SET role_id = 2 WHERE pseudo= ?';} ?>
+                                                          </select>
+                                                      </div>
+                                                      
+                                                       <!-- <br> <input type="password" class="box-input" name="password" 
+                                                      placeholder="Mot de passe" required /> -->
+                                                      
+                                                        <input type="submit" name="submit" value="+ Add" class="box-button" />
+
+                                                    </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                      
                                     
                                 </tbody>
                             </table>
@@ -186,4 +249,8 @@
  <!-----js----------->
 
     <script src="../templates/assets/js/admin.js"></script>
+
+    <script type="text/javascript" src="../templates/assets/DataTables/media/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/assets/DataTables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../templates/assets/js/table.js"></script>
     

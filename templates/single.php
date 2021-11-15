@@ -7,7 +7,8 @@
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?></h2>
 
-
+<div>
+<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 5%;margin-bottom: -15%;">Retour aux Blog Posts</a></p> </div>
         
         <!-------------Post Title--------------->
         <section id="welcome" >
@@ -43,7 +44,7 @@
             <div class="section-inner nopaddingbottom">
                 <div class="container" >
                     <div class="row">
-                        <div class="col-lg-12 mb100 wow" style="text-align: right;margin-bottom: 0%;margin-top: -10%;">        
+                        <div class="col-lg-12 mb100 wow" style="text-align: right;margin-top: -10%;">        
                             <div class="actions"> 
                             <h3 class="section-subheading secondary-font">
                              <br><a href="#comments">Commenter //</a>
@@ -59,7 +60,7 @@
     <section>
             <div class="section-inner">
                 <div class="container">
-                    <div class="row" style="margin-top: -20%;padding-bottom: 0%;">
+                    <div class="row" style="margin-top: -30%;padding-bottom: 0%;">
                         <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
                             <div class="mt60 mb50 single-section-title">
                                 <h3>Commentaires</h3>
@@ -162,21 +163,17 @@
                             <!--/.media-->
 
                             <div id="comments">
-                                <?php include 'form_comment.php'; ?>
+                                <?php include 'form_comment.php'; ?> 
                             </div>
                         </div>
                     </div>
+                        
                 </div>
             </div>
-     
-  
-
-
-         <div >
-                <a class="btn btn-primary " href="#" style="margin-top:382%">Revoir le post</a>
-                <p></p>
-                <br><p></p>
-
-            </div>   
-
+        </div>   
     </section>
+
+        <p><a class="btn btn-primary mt30" href="#" style="margin-left: 50%;">Haut de page</a>
+                        </p>
+                 
+                        

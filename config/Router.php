@@ -62,9 +62,9 @@ class Router
                 } elseif ($route === 'deleteArticle') {
                     $this->backController->deleteArticle($articleId);
                 } elseif ($route === 'addComment') {
-                    $this->frontController->addComment($post, $articleId);
+                    $this->backController->addComment($post, $articleId);
                 } elseif ($route === 'flagComment') {
-                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                    $this->backController->flagComment($this->request->getGet()->get('commentId'));
                 } elseif($route === 'unflagComment'){
                     $this->backController->unflagComment($this->request->getGet()->get('commentId'));
                 } elseif ($route === 'deleteComment') {
