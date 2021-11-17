@@ -30,7 +30,7 @@ echo $this->session->show('not_admin');
                             <p class="lead"><strong>Référence du compte: </strong> <?= $this->session->getUserInfo('id') ?> </p>
                             <p class="lead"><strong>Identifiant : </strong> <?= $this->session->getUserInfo('pseudo'); ?> </p>
                             <p class="lead"><strong>Type du compte : </strong> <?= $this->session->getUserInfo('role') ?></p>
-                            <p>Vous avez la possibilités de modifier votre mot de passe ou de supprimer votre compte. </p>
+                            <p>Vous avez la possibilité de modifier votre mot de passe ou de supprimer votre compte. </p>
                             <p class="mt30"><a href="../public/index.php?route=updatePassword" class="btn btn-primary btn-theme page-scroll">Modifier mon mot de passe</a>
                             <a href="../public/index.php?route=deleteAccount" class="btn btn-primary btn-theme page-scroll" style="margin-left:2%;">Supprimer mon compte</a></p>
                         </div>

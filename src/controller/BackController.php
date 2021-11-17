@@ -209,6 +209,14 @@ class BackController extends Controller
         }
     }
 
+    public function updateRole($userId)
+    {
+            $this->userDAO->updateRole($userId);
+            $this->session->set('update_role', 'Le role de l\'utilisateur a bien été modifié');
+            header('Location: ../public/index.php?route=administration');
+        
+    }
+
     private function checkLoggedIn()
     {
         if(!$this->session->getUserInfo('pseudo')) {
@@ -244,6 +252,7 @@ class BackController extends Controller
                 $this->commentDAO->addComment($post, $articleId);
                 $this->session->set('add_comment', 'Votre commentaire à bien été ajouté');
                 header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+
             } else {
                 $this->view->render('single', [
                     'article' => $article,
@@ -268,5 +277,17 @@ class BackController extends Controller
         $this->session->set('flag_comment', 'Le commentaire à bien été signalé, merci');
         header('Location: ../public/index.php?route=home');
     }
+
+
+    // public function updateRole(Parameter $post)
+    // {
+    //         if ($post->get('submit')) {
+    //                 $this->userDAO->updateRole($post);
+    //                 $this->session->set('update_role', 'Le role a bien été modifié');
+    //                 header('Location: ../public/index.php?route=administration');
+    //             } 
+               
+            
+    // }
 
 }

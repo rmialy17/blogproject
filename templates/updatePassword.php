@@ -1,4 +1,4 @@
-<?php $this->title = 'Modifier mot mot de passe'; ?>
+<?php $this->title = 'Modifier mot de passe'; ?>
 
 
         <section class="connexion">

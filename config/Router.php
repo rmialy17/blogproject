@@ -40,6 +40,7 @@ class Router
      * register => inscription sur le site
      * profile => profil de l'utilisateur
      * updatePassword => mise à jour du mot de passe
+     * updateRole => mise à jour du role
      * logout => deconnexion utilisateur
      * default => page d'accueil du blog
      * deleteAccount => suppresion de compte
@@ -77,6 +78,8 @@ class Router
                     $this->backController->profile();
                 } elseif ($route === 'updatePassword') {
                     $this->backController->updatePassword($post);
+                } elseif ($route === 'updateRole') {
+                    $this->backController->updateRole($this->request->getGet()->get('userId'));   
                 } elseif ($route === 'logout') {
                     $this->backController->logout();
                 } elseif ($route === 'deleteAccount') {

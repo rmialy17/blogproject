@@ -10,7 +10,9 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                     <h3>Laissez un commentaire</h3>
                     </div>
                     <div id="comment_message"></div>
-                    <form action="../public/index.php?route=<?= $route; ?>&articleId=<?= htmlspecialchars($article->getId()) ?>" method="post">
+                   <form action="../public/index.php?route=<?= $route; ?>&articleId=<?= htmlspecialchars($article->getId()) ?>" method="post">
+
+                        <!-- <form action="../public/index.php?route=administration" method="post"> -->
                    
                      <p style="margin-left:3%;"><strong>VOTRE PSEUDO * : <input for="pseudo" style="border: none;outline: none;" id="commentform" name="pseudo"  value="<?= $this->session->getUserInfo('pseudo') ?>" readOnly="readOnly"></strong></p>
                            <!-- value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : ''; ?>"> -->
@@ -22,8 +24,11 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                     <textarea for="content" class="form-control" name="content" id="content" cols="30" rows="10" placeholder="Votre commentaire *"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea>
                     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
-                    <input type="submit" class="btn btn-primary pull-right" value="<?= $submit; ?>" name="submit" id="submit">
-                   <!--  <input type="hidden" name="id[]" value=""> -->
+                    <!-- <input type="submit" class="btn btn-primary pull-right" value="<?= $submit; ?>" name="submit" id="submit"> -->
+
+                    <a href="../public/index.php?route=flagComment&commentId"><input type="submit" class="btn btn-primary pull-right" value="<?= $submit; ?>" name="submit" id="submit"></a>
+                  
+
                     </form> 
 
                     <p>*Champs obligatoires</p>
@@ -31,4 +36,4 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                 </div>
             </div>
 
-                             
+                      

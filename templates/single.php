@@ -71,13 +71,18 @@
             </div>
        
 
- <div class="section-inner"style="margin-top: -70%;padding-top: 0%;">
-                 <?php    
-    foreach ($comments as $comment) {                    
+
+ <div class="section-inner"style="margin-top: -70%;padding-top: 0%;" >
+                 <?php               
+
+    foreach ($comments as $comment ) { 
+                    
           ?><div class="container">
                     <div class="row" >       
                         <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
-                       
+<!-- style="visibility: hidden;" -->
+                       <!-- <a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"><div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">      -->
+                     
                            <div class="media">
                                 <div class="pull-left">
                                     <img class="avatar comment-avatar" src="assets/img/users/1.jpg" alt="">
@@ -88,12 +93,17 @@
                                             <span class="heading-font"><?= htmlspecialchars($comment->getPseudo()); ?></span>&nbsp; <small class="secondary-font">Posté le : <?= htmlspecialchars($comment->getCreatedAt()) ?></small>
                                         </div>
                                         <p><?= nl2br(htmlspecialchars($comment->getContent())) ?></p>
-                                    
+
+                                                  <!-- <script>$('form').submit(function(e){
+                                                    $('#output').hide();  
+                                                    e.preventDefault();</script>  -->
+
+
                                  </div>
                                 </div>     
                             </div>
-                        </div>
-                  
+                        </div></a>
+
                                 <?php
         if ($comment->isFlag()) {
             ?><p class="flag">Ce commentaire à été signalé</p>
@@ -102,6 +112,8 @@
             ?><a class="btn btn-primary pull-right"href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"style="margin-top: -6%;margin-right: 38%;">Signaler</a>
         <?php }
         ?><a class="btn btn-primary pull-right" href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"style="margin-top: -6%;margin-right: 19%;">Supprimer le commentaire</a></div><?php
+
+
     }
     ?>              
                     </div>
@@ -110,6 +122,7 @@
                        
            </div>
     </section>  
+
 
         <section>
             <div class="section-inner">

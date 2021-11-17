@@ -1,11 +1,10 @@
 <?php $this->title = 'Administration'; ?>
 
-<p><h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
-<?=$this->session->show('update_role');?></h2></p>
+<?=$this->session->show('update_role');?>
 
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -36,10 +35,12 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="pull-right">
-                            <div class="btn-group" >
+                            <div class="btn-group">
                                 <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
                                 <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Commentaires</button>
                                 <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="cancelado2">Droits</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="all">Tout</button>
                             </div>
 
                         </div>
@@ -48,12 +49,10 @@
                             <table id="tab"class="table table-filter"style="width: 150%;">
                                 
 
-                                 <thead>
-                                    
+                                 <thead><th>Gestion des blog posts</th>
                                     <tr data-status="pagado">  
-                                        <td><h5 class="box-title">Gestion des blog posts</h5></td></tr>
-                                    <tr data-status="pagado"> 
-                                        <td style="width: 42%;">Titre du blog post</td>
+
+                                        <td style="width: 42%;">Titre</td>
                                         <td style="width: 20%;">Auteur</td>
                                         <td style="width: 20%;">Date/Heure</td>
                                         <td style="width: 30%;">Actions</td>
@@ -96,15 +95,13 @@
                             <tbody> -->
                                 <thead>
                                     <tr data-status="pendiente">
-                                        <td><h5 class="box-title">Gestion des commentaires</h5></td></tr>
 
-                                    <tr data-status="pendiente">   
-                                        <td style="width: 30%;">Auteur du commentaire</td>
+                                        <td style="width: 30%;">Pseudo</td>
                                         <td style="width: 15%;">Réf.</td>
-                                        <td style="width: 15%;">Message</td>
+                                        <td style="width: 30%;">Message</td>
                                         <td style="width: 20%;">Date/Heure</td>
-                                       <td style="width: 20%;">Réf.Article associé</td>
-                                        <td style="width: 40%;">Actions</td>
+                                       <td style="width: 30%;">Réf.Article associé</td>
+                                        <td style="width: 30%;">Actions</td>
                                     </tr>
                                 </thead> 
 
@@ -151,14 +148,12 @@
 
                             <tbody> -->
                                 <thead>
-                                    <tr data-status="cancelado"> 
-                                        <td><h5 class="box-title">Gestion des utilisateurs</h5></td></tr>
-                                    <tr data-status="cancelado"> 
-                                        <td style="width: 3%;">Pseudo de l'utilisateur</td>
+                                    <tr data-status="cancelado">
+                                        <td style="width: 30%;">Pseudo</td>
                                         <td style="width: 15%;">Référence</td>
-                                        <td style="width: 20%;">Date création</td>
-                                        <td style="width: 15%;">Rôle</td>
-                                        <td style="width: 50%;">Actions</td>
+                                        <td style="width: 30%;">Date création</td>
+                                        <td style="width: 20%;">Rôle</td>
+                                        <td style="width: 30%;">Actions</td>
                                     </tr>    
                                 </thead>
                                     <?php
@@ -172,7 +167,7 @@
                                                     <h4 class="title"><?= htmlspecialchars($user->getPseudo());?>
                                                     </h4>
                                                     <p class="summary"></p>
-                                                    <td><center><?= htmlspecialchars($user->getId());?></center></td>
+                                                    <td><?= htmlspecialchars($user->getId());?></td>
                                                     <td><?= htmlspecialchars($user->getCreatedAt());?></td>
                                                     <td><?= htmlspecialchars($user->getRole());?></td>
                                                
@@ -180,12 +175,12 @@
                                                                            <?php
                                                 if ($user->getRole() !== 'admin') {
                                                     ?>
-                                                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a><br>
+                                                   <!--  <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a> -->
                                                    <a href="../public/index.php?route=updateRole&userId=<?= $user->getId();?>">Modifier role</a>
                                                 <?php
                                                 } else {
                                                     ?>
-                                                   Actions impossibles
+                                                    Suppression impossible
                                                 <?php
                                                 }
                                                 ?> 
@@ -197,6 +192,51 @@
                             <?php
                         }
                         ?>
+                               
+                                 
+                                    <tr data-status="cancelado2">
+                                        <td>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                   <!-- <form class="box" action="../public/index.php?route=updateRole&userId=<?= $user->getId();?>" method="post"> -->
+                                                      <h4 class="box-title">
+                                                        Gestion des droits
+                                                      </h4>
+                                                      <label for="role">Nom de l'utilisateur </label>
+                                                    <input type="text" list="role" name="role">
+                                                    <datalist id="role">
+                                                      <br><select class="box-input" name="pseudo"  required>
+
+                                   <?php foreach ($users as $user)
+                                    {
+                                    ?>
+                                   <option name="pseudo" value="<?= htmlspecialchars($user->getPseudo());?>"><?= htmlspecialchars($user->getRole());?>  </option>
+
+
+                                                        
+<?php
+                        }
+                        ?>
+
+  
+                                    </select>
+                             </datalist>
+                        
+<button><a href="../public/index.php?route=updateRole&userId=<?= $user->getId();?>">Modifier role</a></button>
+                                                         <!--  <select class="box-input" name="role" id="role" >
+                                                         <option value="" disabled selected>Nouveau rôle</option> 
+                                                            <option name="admin" value="admin">Admin</option>
+                                                            <option name="user" value="user">User</option> <br>
+                                                      
+                                                       <input type="submit" name="submit" value="Mettre à jour" class="box-button" />
+                                                        </select>
+                                                    </form> -->
+
+                                                         
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
                  
                                     
                                 </tbody>

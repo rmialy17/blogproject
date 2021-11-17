@@ -115,6 +115,30 @@ class UserDAO extends DAO
         //TODO : gérer si retourne false, mettre un autre msg
     }
 
+/**
+     * Mise à jour du role de l'utilisateur userProfile dans la base de données
+     * @param Parameter $post Nouveau role
+     * @param $userProfile mixed Profile de l'utilisateur concerné
+     * @return false Si une erreur survient
+     */
+    // public function updateRole(Parameter $post)
+    // {
+    //      if (key_exists('role', $post)) {
+    //         $sql = 'UPDATE user SET role_id=:roleid WHERE pseudo=:pseudo';
+    //          // $sql = 'INSERT INTO user (role_id) VALUES (2) WHERE pseudo=:pseudo';
+    //         $this->createQuery($sql, [
+    //             //'password' => password_hash($post->get('password'), PASSWORD_DEFAULT),
+    //             // 'id' => $userProfile['id'], 
+    //             'pseudo' => $post->get('pseudo'),
+    //             'pseudo' => $userProfile['pseudo'],
+    //             'roleid' => 2
+    //         ]);
+    //     }
+    //     return false;
+    //     //TODO : gérer si retourne false, mettre un autre msg
+    // }
+
+
     /**
      * Suppression d'un compte dans la base de données
      * @param $user mixed Compte à supprimer
@@ -131,5 +155,17 @@ class UserDAO extends DAO
     {
         $sql = 'DELETE FROM user WHERE id = ?';
         $this->createQuery($sql, [$pseudo]);
+    }
+
+    public function updateRole($pseudo)
+    {
+        $sql = 'UPDATE user SET role_id=2 WHERE id = ?';
+        $this->createQuery($sql, [$pseudo
+            // 'id' => $userProfile['id'],
+            //     'pseudo' => $userProfile['pseudo'],
+            // 'roleid'=> 2
+
+
+        ]);
     }
 }
