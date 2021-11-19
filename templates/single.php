@@ -5,7 +5,7 @@
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?></h2>
+<?= $this->session->show('delete_comment'); ?></h2><br>
 
 <div>
 <p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 5%;margin-bottom: -15%;">Retour aux Blog Posts</a></p> </div>
@@ -76,44 +76,46 @@
                  <?php               
 
     foreach ($comments as $comment ) { 
-                    
+        if($comment->isFlag() != 1){       
           ?><div class="container">
                     <div class="row" >       
                         <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
-<!-- style="visibility: hidden;" -->
-                       <!-- <a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"><div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">      -->
+
                      
                            <div class="media">
                                 <div class="pull-left">
                                     <img class="avatar comment-avatar" src="assets/img/users/1.jpg" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <div class="well">
+                                        <div class="well">
                                         <div class="media-heading">
                                             <span class="heading-font"><?= htmlspecialchars($comment->getPseudo()); ?></span>&nbsp; <small class="secondary-font">Posté le : <?= htmlspecialchars($comment->getCreatedAt()) ?></small>
                                         </div>
                                         <p><?= nl2br(htmlspecialchars($comment->getContent())) ?></p>
 
-                                                  <!-- <script>$('form').submit(function(e){
-                                                    $('#output').hide();  
-                                                    e.preventDefault();</script>  -->
+                                              
+ <?php
+        if ($comment->isFlag()) {
 
-
+            ?><strong><p class="flag">Ce commentaire à été signalé</p></strong>
+            <?php } else {
+                ?>
+<a class="btn btn-primary pull-right"href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"style="margin-top: -6%;margin-right: 20%;">Signaler le commentaire</a>
+        <?php }
+        ?>
                                  </div>
                                 </div>     
                             </div>
                         </div></a>
 
-                                <?php
-        if ($comment->isFlag()) {
-            ?><p class="flag">Ce commentaire à été signalé</p>
-            <?php
-        } else {
-            ?><a class="btn btn-primary pull-right"href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"style="margin-top: -6%;margin-right: 38%;">Signaler</a>
-        <?php }
-        ?><a class="btn btn-primary pull-right" href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"style="margin-top: -6%;margin-right: 19%;">Supprimer le commentaire</a></div><?php
+                               
+       
+            
+        <!-- <a class="btn btn-primary pull-right" href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"style="margin-top: -6%;margin-right: 19%;">Supprimer le commentaire</a></div>-->
 
+        <?php 
 
+    }
     }
     ?>              
                     </div>

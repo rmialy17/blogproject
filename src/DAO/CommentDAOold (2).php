@@ -80,8 +80,8 @@ class CommentDAO extends DAO
 
     public function getFlagComments()
     {
-        $sql = 'SELECT id, pseudo, content, createdAt, flag, article_id FROM comment WHERE (flag = 1) OR (flag = 3) ORDER BY createdAt DESC';
-        $result = $this->createQuery($sql);
+        $sql = 'SELECT id, pseudo, content, createdAt, flag, article_id FROM comment WHERE flag = ? ORDER BY createdAt DESC';
+        $result = $this->createQuery($sql, [1]);
         $comments = [];
         foreach ($result as $row) {
             $commentId = $row['id'];

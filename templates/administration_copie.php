@@ -1,11 +1,10 @@
 <?php $this->title = 'Administration'; ?>
 
-<p><h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
-<?=$this->session->show('update_role');?></h2></p><br>
+<?=$this->session->show('update_role');?>
 
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -14,21 +13,18 @@
 
 
     <!-- Custom CSS -->
-    <!-- <link href="../templates/assets/css/admin.css" rel="stylesheet"> -->
+    <link href="../templates/assets/css/admin.css" rel="stylesheet">
 
 
 <!-- fichier datatables -->
 
 <link rel="stylesheet" type="text/css" href="../templates/assets/DataTables/media/css/jquery.dataTables.min.css">
 
-
-
-
    <!------ Include the above in your HEAD tag ----------> 
 
 
 
-<br><p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 4%;">Retour aux Blog Posts</a></p>
+<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 4%;">Retour aux Blog Posts</a></p>    
 
 <div class="container">
     <div class="row">
@@ -39,10 +35,12 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="pull-right">
-                            <div class="btn-group" >
+                            <div class="btn-group">
                                 <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
                                 <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Commentaires</button>
                                 <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="cancelado2">Droits</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="all">Tout</button>
                             </div>
 
                         </div>
@@ -51,12 +49,10 @@
                             <table id="tab"class="table table-filter"style="width: 150%;">
                                 
 
-                                 <thead>
-                                    
+                                 <thead><th>Gestion des blog posts</th>
                                     <tr data-status="pagado">  
-                                        <td><h5 class="box-title">Gestion des blog posts</h5></td></tr>
-                                    <tr data-status="pagado"> 
-                                        <td style="width: 42%;">Titre du blog post</td>
+
+                                        <td style="width: 42%;">Titre</td>
                                         <td style="width: 20%;">Auteur</td>
                                         <td style="width: 20%;">Date/Heure</td>
                                         <td style="width: 30%;">Actions</td>
@@ -89,32 +85,33 @@
                                 <?php
                                 }
                                 ?>
-                                </tbody>
+                               <!--  </tbody>
                         </table>
                     </div>
 
 
-                    <!-- <div class="table-container"> -->
+                    <div class="table-container">
                         <table id=""class="table table-filter"style="width: 150%;">
-                            <tbody>
+                            <tbody> -->
                                 <thead>
                                     <tr data-status="pendiente">
-                                        <td><h5 class="box-title">Gestion des commentaires</h5></td></tr>
 
-                                    <tr data-status="pendiente">   
-                                        <td style="width: 30%;">Auteur du commentaire</td>
+                                        <td style="width: 30%;">Pseudo</td>
                                         <td style="width: 15%;">Réf.</td>
-                                        <td style="width: 15%;">Message</td>
+                                        <td style="width: 30%;">Message</td>
                                         <td style="width: 20%;">Date/Heure</td>
-                                       <td style="width: 20%;">Réf.Article associé</td>
-                                        <td style="width: 40%;">Actions</td>
+                                       <td style="width: 30%;">Réf.Article associé</td>
+                                        <td style="width: 30%;">Actions</td>
                                     </tr>
                                 </thead> 
 
-                                    <?php
+                                <!-- <script type="text/javascript">$('form').submit(function(){ 
+    $('../templates/form_comment.php#output').show();  -->
 
+<!-- });</script> -->
+                                    <?php
                                 foreach ($comments as $comment)
-                                { 
+                                {
                                     ?> 
                                     <tr data-status="pendiente">
                                         <td>
@@ -127,36 +124,11 @@
                                                     </h4>
                                                     <td><?= htmlspecialchars($comment->getId());?></td>
                                                     <p class="summary"></p>
-
-                                                   <td><div align="center"><button class="popup-button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>"> Voir le commentaire</button></div> 
-
-                          <!----POP UP CONTENT------------->                         
-   
-        <div class="content">
-            <div class="modal blur-effect" id="popup_<?= htmlspecialchars($comment->getId());?>" ><br><br>
-             
-           <div class="popup-content"><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?><div class="close"></div></div>
-            </div>
-        </div>
-
-                            <!----------POPUP End------>
-            <div class="overlay"></div> 
-            <!-- (When POPUP->background->black(transparent)) -->
-
-</td>
-         <!-- Le script qui crée la popup -->
-        <script src="../templates/assets/js/popupadmin.js"></script>
-    <!-- Pour l'effet blur -->
-        <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
-        <!-- <script src="../templates/assets/js/cssParser.js"></script> -->
-        <!-- <script src="../templates/assets/js/css-filters-polyfill.js"></script> -->
-                                                   
- 
-
+                                                    <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
                                                  <td><?= htmlspecialchars($comment->getCreatedAt());?></td>
                                                  <td><a href="../public/index.php?route=article&amp;articleId=<?= htmlspecialchars($comment->getArticleId());?>"><?= htmlspecialchars($comment->getArticleId());?></a></td>
                                                     <td>
-            <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Autoriser</a>
+            <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler</a>
             <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer</a>
         </td>
                                                 </div>
@@ -166,24 +138,22 @@
                                         <?php
                                 }
                                 ?>
-                            </tbody> 
+                           <!--  </tbody> 
 
                       </table>
                     </div>
 
-                    <!-- <div class="table-container"> -->
+                    <div class="table-container">
                          <table id=""class="table table-filter"style="width: 150%;">
 
-                            <tbody>
+                            <tbody> -->
                                 <thead>
-                                    <tr data-status="cancelado"> 
-                                        <td><h5 class="box-title">Gestion des utilisateurs</h5></td></tr>
-                                    <tr data-status="cancelado"> 
-                                        <td style="width: 3%;">Pseudo de l'utilisateur</td>
+                                    <tr data-status="cancelado">
+                                        <td style="width: 30%;">Pseudo</td>
                                         <td style="width: 15%;">Référence</td>
-                                        <td style="width: 20%;">Date création</td>
-                                        <td style="width: 15%;">Rôle</td>
-                                        <td style="width: 50%;">Actions</td>
+                                        <td style="width: 30%;">Date création</td>
+                                        <td style="width: 20%;">Rôle</td>
+                                        <td style="width: 30%;">Actions</td>
                                     </tr>    
                                 </thead>
                                     <?php
@@ -197,7 +167,7 @@
                                                     <h4 class="title"><?= htmlspecialchars($user->getPseudo());?>
                                                     </h4>
                                                     <p class="summary"></p>
-                                                    <td><center><?= htmlspecialchars($user->getId());?></center></td>
+                                                    <td><?= htmlspecialchars($user->getId());?></td>
                                                     <td><?= htmlspecialchars($user->getCreatedAt());?></td>
                                                     <td><?= htmlspecialchars($user->getRole());?></td>
                                                
@@ -205,12 +175,11 @@
                                                                            <?php
                                                 if ($user->getRole() !== 'admin') {
                                                     ?>
-                                                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a><br>
-                                                   <a href="../public/index.php?route=updateRole&userId=<?= $user->getId();?>">Modifier role</a>
+                                                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a>
                                                 <?php
                                                 } else {
                                                     ?>
-                                                   Actions impossibles
+                                                    Suppression impossible
                                                 <?php
                                                 }
                                                 ?> 
@@ -222,7 +191,54 @@
                             <?php
                         }
                         ?>
-                 
+                                <thead>
+                                    <tr data-status="cancelado2">
+                                        <td style="width: 30%;">Pseudo</td>
+                                       <!--  <td style="width: 15%;">Référence</td>
+                                        <td style="width: 30%;">Date création</td> -->
+                                        <td style="width: 20%;">Rôle</td>
+                                        <!-- <td style="width: 30%;">Actions</td> -->
+                                    </tr>    
+                                </thead>
+                                    <tr data-status="cancelado2">
+                                        <td>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                   <form class="box" action="../public/index.php?route=administration" method="post">
+                                                      <h4 class="box-title">
+                                                        Gestion des droits
+                                                      </h4>
+                                                      <br><input type="text" class="box-input" name="pseudo"
+                                                      placeholder="Nom d'utilisateur" required />
+
+                                                      <!-- <input type="text" class="box-input" name="email" 
+                                                      placeholder="Email" required /> -->
+
+                                                      <!-- <input type="text" class="box-input" name="role"  -->
+                                                      <!-- placeholder="Role" required /> -->
+                                                      
+                                                     <!--  <div>
+                                                          <br><select class="box-input" name="role" id="role" >
+                                                         <option value="" disabled selected>Rôle</option> 
+                                                            <option name="admin" value="admin">Admin</option>
+                                                            <option name="user" value="user">User</option>
+                    
+                                                          </select>
+                                                      </div> -->
+                                                      
+                                                       <!-- <br> <input type="password" class="box-input" name="password" 
+                                                      placeholder="Mot de passe" required /> -->
+                                                      
+                                                       <!--  <input type="submit" name="submit" value="Mettre à jour" class="box-button" />
+
+                                                    </form> -->
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                      <?php
+                        // }
+                        ?>
                                     
                                 </tbody>
                             </table>

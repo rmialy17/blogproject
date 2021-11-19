@@ -76,7 +76,6 @@ class BackController extends Controller
                 $post->set('title', $article->getTitle());
                 $post->set('chapo', $article->getChapo());
                 $post->set('content', $article->getContent());
-                $post->set('lien', $article->getLink());
                 $post->set('author', $article->getAuthor());
                 //Si le formulaire n'a pas été soumis, on affiche l'article à modifier
                 $this->view->render('edit_article', [
@@ -179,18 +178,16 @@ class BackController extends Controller
      */
     public function administration()
     {
-        // if ($post->get('submit')) {
-            if ($this->checkAdmin()) {
-                $articles = $this->articleDAO->getArticles();
-                $flagComments = $this->commentDAO->getFlagComments();
-                $users = $this->userDAO->getUsers();
-                $this->view->render('administration', [
-                    'articles' => $articles,
-                    'comments' => $flagComments,
-                    'users' => $users
-                ]);
-            }
-        // }
+        if ($this->checkAdmin()) {
+            $articles = $this->articleDAO->getArticles();
+            $flagComments = $this->commentDAO->getFlagComments();
+            $users = $this->userDAO->getUsers();
+            $this->view->render('administration', [
+                'articles' => $articles,
+                'comments' => $flagComments,
+                'users' => $users
+            ]);
+        }
     }
 
     public function unflagComment($commentId)
@@ -277,7 +274,8 @@ class BackController extends Controller
     {
         $this->commentDAO->flagComment($commentId);
         $this->session->set('flag_comment', 'Le commentaire à bien été signalé, merci');
-        header('Location: ../public/index.php?route=home');
+        // header('Location: ../public/index.php?route=home');
+         header('Location: ../public/index.php?route=article&articleId=' . $articleId);
     }
 
 

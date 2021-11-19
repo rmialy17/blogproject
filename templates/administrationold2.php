@@ -13,7 +13,7 @@
 
 
     <!-- Custom CSS -->
-    <link href="../templates/assets/css/admin.css" rel="stylesheet">
+    <!-- <link href="../templates/assets/css/admin.css" rel="stylesheet"> -->
 
 
 <!-- fichier datatables -->
@@ -175,7 +175,8 @@
                                                                            <?php
                                                 if ($user->getRole() !== 'admin') {
                                                     ?>
-                                                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a>
+                                                   <!--  <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId();?>">Supprimer</a> -->
+                                                   <a href="../public/index.php?route=updateRole&userId=<?= $user->getId();?>">Modifier role</a>
                                                 <?php
                                                 } else {
                                                     ?>
@@ -191,54 +192,52 @@
                             <?php
                         }
                         ?>
-                                <thead>
-                                    <tr data-status="cancelado2">
-                                        <td style="width: 30%;">Pseudo</td>
-                                       <!--  <td style="width: 15%;">Référence</td>
-                                        <td style="width: 30%;">Date création</td> -->
-                                        <td style="width: 20%;">Rôle</td>
-                                        <!-- <td style="width: 30%;">Actions</td> -->
-                                    </tr>    
-                                </thead>
+                               
+                                 
                                     <tr data-status="cancelado2">
                                         <td>
                                             <div class="media">
                                                 <div class="media-body">
-                                                   <form class="box" action="../public/index.php?route=administration" method="post">
+                                                   <!-- <form class="box" action="../public/index.php?route=updateRole&userId=<?= $user->getId();?>" method="post"> -->
                                                       <h4 class="box-title">
                                                         Gestion des droits
                                                       </h4>
-                                                      <br><input type="text" class="box-input" name="pseudo"
-                                                      placeholder="Nom d'utilisateur" required />
+                                                      <label for="role">Nom de l'utilisateur </label>
+                                                    <input type="text" list="role" name="role">
+                                                    <datalist id="role">
+                                                      <br><select class="box-input" name="pseudo"  required>
 
-                                                      <!-- <input type="text" class="box-input" name="email" 
-                                                      placeholder="Email" required /> -->
+                                   <?php foreach ($users as $user)
+                                    {
+                                    ?>
+                                   <option name="pseudo" value="<?= htmlspecialchars($user->getPseudo());?>"><?= htmlspecialchars($user->getRole());?>  </option>
 
-                                                      <!-- <input type="text" class="box-input" name="role"  -->
-                                                      <!-- placeholder="Role" required /> -->
-                                                      
-                                                     <!--  <div>
-                                                          <br><select class="box-input" name="role" id="role" >
-                                                         <option value="" disabled selected>Rôle</option> 
+
+                                                        
+<?php
+                        }
+                        ?>
+
+  
+                                    </select>
+                             </datalist>
+                        
+<button><a href="../public/index.php?route=updateRole&userId=<?= $user->getId();?>">Modifier role</a></button>
+                                                         <!--  <select class="box-input" name="role" id="role" >
+                                                         <option value="" disabled selected>Nouveau rôle</option> 
                                                             <option name="admin" value="admin">Admin</option>
-                                                            <option name="user" value="user">User</option>
-                    
-                                                          </select>
-                                                      </div> -->
+                                                            <option name="user" value="user">User</option> <br>
                                                       
-                                                       <!-- <br> <input type="password" class="box-input" name="password" 
-                                                      placeholder="Mot de passe" required /> -->
-                                                      
-                                                       <!--  <input type="submit" name="submit" value="Mettre à jour" class="box-button" />
-
+                                                       <input type="submit" name="submit" value="Mettre à jour" class="box-button" />
+                                                        </select>
                                                     </form> -->
+
+                                                         
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                      <?php
-                        }
-                        ?>
+                 
                                     
                                 </tbody>
                             </table>
