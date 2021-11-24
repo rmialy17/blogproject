@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-	$('.star').on('click', function () {
-      $(this).toggleClass('star-checked');
-    });
+	// $('.star').on('click', function () {
+ //      $(this).toggleClass('star-checked');
+ //    });
 
-    $('.ckbox label').on('click', function () {
-      $(this).parents('tr').toggleClass('selected');
-    });
+ //    $('.ckbox label').on('click', function () {
+ //      $(this).parents('tr').toggleClass('selected');
+ //    });
 
     $('.btn-filter').on('click', function () {
       var $target = $(this).data('target');

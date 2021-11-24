@@ -1,0 +1,23 @@
+
+
+.modal-dialog{
+   /* width: 400px;
+    height: 150px;
+    background-color: lightgray;
+    z-index: 1000;
+    position: relative;*/
+    margin-left: 50%;
+    text-align: center;
+    display: none;
+
+}
+
+.modal-body{
+   color: gray;
+   font-family: system-ui;
+}
+
+.modal-header{
+background-color: #F6B84D;
+color: white;
+}
