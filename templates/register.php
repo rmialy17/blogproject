@@ -10,7 +10,9 @@
                             <div class="item-metas text-muted mb30 white"> 
 
       <div class="message_erreur" style="text-align : center;color:red;" >
-<div>
+         <?= $this->session->show('error_register')?>
+    </div>
+    
     <form method="post" action="../public/index.php?route=register">
         <label for="pseudo"style="color:#303030;">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : '' ?>"style="color:black;"><br>
@@ -18,7 +20,7 @@
         <label for="password"style="color:#303030;">Mot de passe</label><br>
         <input type="password" id="password" name="password" value="<?= isset($post) ? htmlspecialchars($post->get('password')) : ''; ?>"style="color:black;"><br>
         <?= isset($errors['password']) ? $errors['password'] : ''?>
-        <br><input type="submit" value="Inscription" id="submit" name="submit" style="color: black;">
+        <br><input type="submit" value="S'inscrire" id="submit" name="submit" style="color: black;">
     </form>
   
      <br><p><span class="meta-item" ><i class="pe-icon pe-7s-folder"style="color:#303030;"></i><a href="../public/index.php?route=login"><strong> Déjà inscrit ? </strong><span class="meta-item" style="color:#303030;">Connectez-vous</span></span></a></p>

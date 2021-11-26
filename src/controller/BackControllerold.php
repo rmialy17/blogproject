@@ -132,6 +132,7 @@ class BackController extends Controller
             if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'User');
                 if (!$errors) {
+                    // var_dump($this->session);
                     $this->userDAO->updatePassword($post, $this->session->get('user'));
                     $this->session->set('update_password', 'Le mot de passe à bien été modifié');
                     header('Location: ../public/index.php?route=profile');

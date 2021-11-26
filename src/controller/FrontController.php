@@ -108,6 +108,8 @@ class FrontController extends Controller
             if ($checkUser) {
                 //Ajoute une erreur avec un message renvoyé par checkUser
                 $errors['pseudo'] = $checkUser;
+                 $this->session->set('error_register', 'Le pseudo existe déjà. Veuillez saisir un nouveau pseudo.');
+                header('Location: ../public/index.php?route=register');
             }
             if (!$errors) {
                 $this->userDAO->register($post);

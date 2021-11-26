@@ -102,17 +102,17 @@ class UserDAO extends DAO
      */
     public function updatePassword(Parameter $post, $userProfile)
     {
-        if (key_exists('password', $post)) {
-            $sql = 'UPDATE user SET password=:password WHERE id=:id AND pseudo=:pseudo';
+        
+            $sql = 'UPDATE user SET password=:password WHERE pseudo=:pseudo';
             $this->createQuery($sql, [
-                //'password' => password_hash($post->get('password'), PASSWORD_DEFAULT),
-                'id' => $userProfile['id'],
+              'password' => password_hash($post->get('password'), PASSWORD_DEFAULT),
+                // 'id' => $userProfile['id'],
                 'pseudo' => $userProfile['pseudo'],
-                'password' => $post->get('password')
+                // 'password'=> $hashpassword
+                // 'password' => $post->get('password')
+
             ]);
-        }
-        return false;
-        //TODO : gérer si retourne false, mettre un autre msg
+       
     }
 
 /**

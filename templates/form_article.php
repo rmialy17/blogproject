@@ -27,7 +27,6 @@ $route = isset($post) && $post->get('id') ? 'editArticle&articleId=' . $post->ge
 $title = isset($post) ? htmlspecialchars($post->get('title')) : '';
 $chapo = isset($post) ? htmlspecialchars($post->get('chapo')) : '';
 $content = isset($post) ? htmlspecialchars($post->get('content')) : '';
-$link= isset($post) ? htmlspecialchars($post->get('link')) : '';
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 <form action="../public/index.php?route=<?= $route; ?>" method="post">
