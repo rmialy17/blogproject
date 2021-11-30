@@ -15,6 +15,7 @@
     <!-- Custom CSS -->
     <!-- <link href="../templates/assets/css/admin.css" rel="stylesheet"> -->
 <link href="../templates/assets/css/admin2.css" rel="stylesheet"> 
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
 
 <!-- fichier datatables -->
 
@@ -26,28 +27,8 @@
 
 
 
-<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 4%;">Retour aux Blog Posts</a></p>    
+<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"id="admin1">Retour aux Blog Posts</a></p>    
 
-<!---------------modal---------------------->
-<div class="comment-modal">
-    <!-- <div class="comment-modal" > -->
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- <button type="button" class="closex" aria-hidden="true" data-dismiss="modal" onclick="closeModal()">×</button> -->
-                <h4 class="modal-title">Contenu du commentaire</h4>
-            </div>
-            <div class="modal-body">
-                <p>Corps d!e la modale</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-inverse" type="button" onclick="closeModal()"><i class="icon icon-times icon-lg"></i> Fermer</button>
-            </div>
-        </div>
-    <!-- </div> -->
-</div>
-
-<!--------------------end modal------------------>
 <body>
 
 <div class="container">
@@ -102,7 +83,7 @@
                         
 
                     <div class="table-container" >
-                            <table id="tab"class="table table-filter"style="width: 150%;">
+                            <table id="tab"class="table table-filter"id="poststab">
                                 
 
                                  <thead>
@@ -112,10 +93,10 @@
 
                                     <tr data-status="pagado">  
 
-                                        <td style="width: 42%;">Titre</td>
-                                        <td style="width: 20%;">Auteur</td>
-                                        <td style="width: 20%;">Date/Heure</td>
-                                        <td style="width: 30%;">Actions</td>
+                                        <td id="poststab2">Titre</td>
+                                        <td id="poststab3">Auteur</td>
+                                        <td id="poststab4">Date/Heure</td>
+                                        <td id="poststab5">Actions</td>
                                     </tr>  
                                    </thead> 
                                    <tbody> 
@@ -157,7 +138,7 @@
                 </div>
 
 <div class="row paging text-center">
-                <p><a class="btn btn-primary mt30" href="#" >Haut de page</a>
+                <p><a class="btn btn-primary mt30" id="commentsmodal" href="#" >Haut de page</a>
                 </p><br>
             </div>
             </div>
@@ -168,9 +149,30 @@
            
     </div>
 </div>  
-                <!-------------Table 2--------------->
 
-<div class="container"id="comments">
+        <!-----------------------Table 2------------------------>
+
+                <!---------------modal-------------->
+<div class="comment-modal" >
+    <!-- <div class="comment-modal" > -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="closex" aria-hidden="true" data-dismiss="modal" onclick="closeModal()">×</button> -->
+                <h4 class="modal-title">Contenu du commentaire</h4>
+            </div>
+            <div class="modal-body">
+                <p>Corps d!e la modale</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-inverse" type="button" onclick="closeModal()"><i class="icon icon-times icon-lg"></i> Fermer</button>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+            <!-----------------end modal-------------->
+
+<div class="container">
     <div class="row">
 
         <section class="content">
@@ -196,19 +198,19 @@
 
                     <div class="table-container">
 
-                        <table id="tab2"class="table table-filter" style="width: 100%;position: relative;">
+                        <table id="tab2"class="table table-filter" id="commentstab">
                             <!-- <tbody> -->
                                 <thead>
                                   
                                         <tr><td><h5 class="box-title">Gestion des commentaires</h5></td></tr>
 
                                     <tr data-status="pendiente">   
-                                        <td style="width: 20%;">Auteur du commentaire</td>
-                                        <td style="width: 15%;">Réf.</td>
-                                        <td style="width: 15%;">Message</td>
-                                        <td style="width: 20%;">Date/Heure</td>
-                                       <td style="width: 8%;">Réf.Article </td>
-                                        <td style="width: 40%;">Actions</td>
+                                        <td id="commentstab2">Auteur du commentaire</td>
+                                        <td id="commentstab3">Réf.</td>
+                                        <td id="commentstab4">Message</td>
+                                        <td id="commentstab5">Date/Heure</td>
+                                       <td id="commentstab6">Réf.Article </td>
+                                        <td id="commentstab7">Actions</td>
                                     </tr>
                                 </thead> 
                                    <tbody>
@@ -232,7 +234,7 @@
                                        
                                                    <!-- <td><div align="center"><button class="popup-button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>" onclick="showModal(<?=htmlspecialchars($comment->getId())?>)" > Voir le commentaire</button></div> </td><--> 
                                                 <td> 
-                <button class="btn btn-primary" type="button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>" onclick="showModal(<?=htmlspecialchars($comment->getId())?>)"><i class="icon icon-check icon-lg" ></i> Voir le commentaire</button>
+                <a href="#commentsmodal"><button class="btn btn-primary"type="button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>" onclick="showModal(<?=htmlspecialchars($comment->getId())?>)"><i class="icon icon-check icon-lg" ></i> Voir le commentaire</button></a>
            
 
               <!-------------Modal content------------->
@@ -310,7 +312,7 @@
                         </div>
 
                     <div class="table-container">
-                         <table id="tab3"class="table table-filter"style="width: 150%;">
+                         <table id="tab3"class="table table-filter"id="userstab">
 
                            
                                 <thead>
@@ -319,11 +321,11 @@
 
                              <!-- <tbody>             -->
                                     <tr data-status="cancelado"> 
-                                        <td style="width: 3%;">Pseudo de l'utilisateur</td>
-                                        <td style="width: 15%;">Référence</td>
-                                        <td style="width: 20%;">Date création</td>
-                                        <td style="width: 15%;">Rôle</td>
-                                        <td style="width: 50%;">Actions</td>
+                                        <td id="userstab2">Pseudo de l'utilisateur</td>
+                                        <td id="userstab3">Référence</td>
+                                        <td id="userstab4">Date création</td>
+                                        <td id="userstab5">Rôle</td>
+                                        <td id="userstab6">Actions</td>
                                     </tr>    
                                 </thead>  
                                 <tbody>

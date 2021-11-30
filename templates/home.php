@@ -1,7 +1,10 @@
 <?php $this->title = "Accueil blog posts"; ?>
 
- 
-<h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
+<head>
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+</head>
+
+<h2 class="section-subheading secondary-font" id="shows" > 
 <?= $this->session->show('add_article');?>
 <?= $this->session->show('edit_article');?>
 <?= $this->session->show('add_comment'); ?>
@@ -31,8 +34,8 @@ if ($this->session->getUserInfo('pseudo')) :
 <?php
 else:
     ?>
-    <h1 style="font-family: serif;font-style: italic;margin-top: -5%;">Bienvenue ! </h1>
-    <br><h3 style="font-family: serif;color: grey;">Connectez-vous pour ajouter des posts :</h3>
+    <h1 class="homeh1">Bienvenue ! </h1>
+    <br><h3 class="homeh3">Connectez-vous pour ajouter des posts :</h3>
     <h3 class="section-subheading secondary-font"> 
     <br><a href="../public/index.php?route=login">Connexion //</a>
     <a href="../public/index.php?route=register">Inscription</a></h3>
@@ -40,7 +43,7 @@ else:
     <?php
 endif;
 ?> 
-<p><a class="btn btn-primary mt30"href="../public/index.php?route=addArticle"style="font-style: normal;">Ajouter un blog post</a></p>
+<p class="homebtn"><a class="btn btn-primary mt30"href="../public/index.php?route=addArticle">Ajouter un blog post</a></p>
 
                         </div> 
                     </div>
@@ -54,9 +57,9 @@ endif;
                    
 <!----------------------Blog Posts List----------------------->
 
-   <section>
+   <section class="homesection">
             <!-- <div class="section-inner" > -->
-                <div class="container" style="margin-left:45%;">
+                <div class="container">
                     <div class="row">
                         <div class="col-sm-8">
 
@@ -92,7 +95,7 @@ foreach ($articles as $article) {
 <?php
 }
 ?>                     <div class="row paging text-center">
-                <a class="btn btn-primary mt30" href="#" style="margin-top:-10%">Dernier post</a>
+                <a class="btn btn-primary mt30" id="homebtn2"href="#">Dernier post</a>
                 <p></p>
                 <br><p></p>
 

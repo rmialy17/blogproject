@@ -43,31 +43,33 @@
                     <div class="clearfix">
                         <ul class="list-inline social-links wow pull-left">
                             <li>
-                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li> 
-                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                                </li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
                         </ul>
 
-                        <div class="pull-right text-right"style="margin-right:9%;">
+                        <div class="pull-right text-right">
                             <ul class="list-inline">
                                 <li>
-                                    <div ><a href="#contact-tabs"><i class="fa fa-envelope-o"></i> mialy.razaf@gmail.com</a></div>
+                                    <div><a href="#contact-tabs"><i class="fa fa-envelope-o"></i> mialy.razaf@gmail.com</a></div>
                                 </li><br>
                             </ul>
                             <ul class="list-inline">
                                 <li>
-                                  
                                 </li><br>
                             </ul>
                         </div>
@@ -77,8 +79,14 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
-                    <a class="navbar-brand smoothie logo logo-light" href="../templates/bloghome.php"><img src="assets/img/logo.png"alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="../templates/bloghome.php"><img src="assets/img/logo_reverse.png" alt="logo"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand smoothie logo logo-light" href="bloghome.html"><img src="assets/img/logo.png"alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="bloghome.html"><img src="assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -491,7 +499,7 @@
                 </div>
         </section>
 
-        <section class="dark-wrapper opaqued parallax" style="background-image: url('../templates/assets/img/bg/app1.jpg');background-size: cover;background-repeat: no-repeat;filter: opacity(80%);">
+        <section class="dark-wrapper">
             <div class="contact-tabs" id="contact-tabs" role="tabpanel">
 
                 <!-- Nav tabs -->
@@ -518,7 +526,8 @@
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div id="message"></div>
                                             <form method="post" action="contact.php"id="contactform">
-                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre prenom / nom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
+                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre prenom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
+                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre nom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
                                                 <input type="text" class="form-control col-md-4" name="email" placeholder="votre email *" id="email" required data-validation-required-message="Merci d'indiquer votre adresse email." />
                                                 <textarea name="comments" class="form-control" id="comments" placeholder="Votre message*" required data-validation-required-message="Merci d'indiquer votre message."></textarea>
                                                 <input class="btn btn-primary mt30 btn-white pull-right" type="submit" name="submit" value="Envoyer" />
@@ -561,28 +570,24 @@
                         </div>
 
                         <div class="col-sm-8 col-sm-offset-2">
-                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">  
+                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
                                 <li>
-                                    <img src="assets/img/img_bloghome/logo-info5.jpg" class="img-responsive" alt="">
+                                    <img src="assets/img/logo/logo1.png" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/img_bloghome/logo-info4.jpg" class="img-responsive" alt="">
+                                    <img src="assets/img/logo/logo2.png" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/img_bloghome/logo-info.jpg" class="img-responsive" alt="">
-                                </li>
-                               
-                                <li>
-                                    <img src="assets/img/logo/logo7.png" class="img-responsive" alt="">
-                                </li>   
-                                <li>
-                                    <img src="assets/img/img_bloghome/logo-info6.jpg" class="img-responsive" alt="">
-                                </li>    
-                                <li>
-                                    <img src="assets/img/img_bloghome/logo-info3.jpg" class="img-responsive" alt="">
+                                    <img src="assets/img/logo/logo3.png" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo8.png" class="img-responsive" alt="">
+                                    <img src="assets/img/logo/logo4.png" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/img/logo/logo5.png" class="img-responsive" alt="">
+                                </li>
+                                <li>
+                                    <img src="assets/img/logo/logo6.png" class="img-responsive" alt="">
                                 </li>
                             </ul>
                         </div>
@@ -593,7 +598,7 @@
             </div>
         </section>
 
-        <!----------------------footer-------------------------->
+       <!----------------------footer-------------------------->
 <section>
         <div id="footer-wrapper" class="dark-footer-image-bg">
             <section class="dark-wrapper">

@@ -1,0 +1,267 @@
+ /*----------------bloghome-----------------*/
+
+ #email{
+ 	margin-right:9%;
+ }
+
+/*.dark-wrapper{
+	background-image: url('../templates/assets/img/bg/app1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: opacity(80%);
+}*/
+
+ /*----------------home---------------------*/
+#shows{
+
+font-family: serif;
+font-style: italic;
+color: #F4A460;
+margin-top: 5%;
+margin-bottom: -5%;
+}
+
+.homeh1{
+font-family: serif;
+font-style: italic;
+margin-top: -5%;
+}
+
+.homeh3{
+	font-family: serif;
+	color: grey;
+}
+
+.homebtn{
+	font-style: normal;
+}
+
+.homesection{
+	margin-left:45%;
+}
+
+#homebtn2{
+	margin-top:-10%;
+}
+
+ /*----------------single-------------------*/
+#returnbtn{
+	margin-left: 5%;
+	margin-bottom: -15%;
+}
+
+#singlepost{
+	margin-top:-10%;
+	text-align: justify;
+}
+
+#singlepost2{
+	text-align: right;
+	margin-top: -10%;
+}
+
+#singlepost3{
+	margin-right: 16%;
+}
+
+#singlecomment{
+margin-top: -30%;
+padding-bottom: 0%;
+}
+
+#singlecomment2{
+	margin-top: -70%;
+	padding-top: 0%;
+}
+#commentbtn{
+	margin-top: -6%;
+	margin-right: 20%;
+}
+
+#singlecomment3{
+	margin-top: -15%;
+}
+
+#singlebtn{
+	margin-top: -12%;
+	margin-left: 50%;
+}
+ /*----------------form_article-------------*/
+#returnbtn2{
+	margin-left: 5%;
+}
+
+#addpost{
+	background-size:cover;
+	margin:0;
+	padding: 0;
+}
+
+#addpost2{
+	color:#303030;
+}
+
+.addpost3{
+color:#303030; 
+width: 50%;
+}
+
+ /*----------------form_comment-------------*/
+.commentpseudo{
+	margin-left:3%;
+}
+
+.commentpseudo2{
+	border: none;
+	outline: none;
+}
+ /*----------------login/updatePassword/register--------------------*/
+.errormessage{
+	text-align : center;
+	color:red;
+}
+
+#loginh1{
+	color:grey;
+}
+
+#logincolor{
+	color:#303030;
+}
+
+.logincolor2{
+	color: black;
+}
+
+ /*----------------profile------------------*/
+
+ #profileh2{
+ 	font-family: serif;
+ 	font-style: italic;
+ 	color: #F4A460;
+ 	margin-top: 0;
+ 	margin-bottom: -5%;
+ }
+
+#profile1{
+	margin-left: 2.5%;
+}	
+
+#profile2{
+	margin-left: 1%;
+}
+
+#profile3{
+	margin-left: 2%;
+}
+
+#profile4{
+	margin-left: -10%;
+}
+
+/*------------------------admin css--------------------------*/
+
+#admin1{
+	margin-left: 4%;
+}
+			/*----posts table----*/
+#poststab{
+	width: 150%;
+}
+
+#poststab2{
+	width: 42%;
+}
+
+#poststab3{
+	width: 20%;
+}
+
+#poststab4{
+	width: 20%;
+}
+#poststab5{
+	width: 30%;
+}
+			/*----comments table----*/
+
+#commentstab{
+	width: 100%;
+	position: relative;
+}
+#commentstab2{
+	width: 20%;
+}
+
+#commentstab3{
+	width: 15%;
+}
+
+#commentstab4{
+	width: 15%;
+}
+
+#commentstab5{
+	width: 20%;
+}
+
+#commentstab6{
+	width: 8%;
+}
+
+#commentstab7{
+width: 40%;
+}
+
+				/*-------modal-------*/
+
+
+.modal-dialog{
+   /* width: 400px;
+    height: 150px;
+    background-color: lightgray;
+    z-index: 1000;
+    position: relative;*/
+    margin-left: 50%;
+    text-align: center;
+    display: none;
+
+}
+
+.modal-body{
+   color: gray;
+   font-family: system-ui;
+}
+
+.modal-header{
+background-color: #F6B84D;
+color: white;
+}
+
+				/*----users table----*/
+
+#userstab{
+	width: 150%;
+}
+
+#userstab2{
+	width: 3%;
+}
+
+#userstab3{
+	width: 15%;
+}
+
+#userstab4{
+	width: 20%;
+}
+
+#userstab5{
+	width: 15%;
+}
+
+#userstab6{
+	width: 50%;
+}
+
+/*----------------------end admin css-----------------------*/

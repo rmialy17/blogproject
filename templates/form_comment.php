@@ -3,6 +3,10 @@ $route = isset($post) && $post->get('id') ? 'editComment' : 'addComment';
 $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
 ?>
 
+<head>
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+</head>
+
 
             <div id="comments-form" class="row wow">
                 <div class="col-md-12">
@@ -14,7 +18,7 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
 
                         <!-- <form action="../public/index.php?route=administration" method="post"> -->
                    
-                     <p style="margin-left:3%;"><strong>VOTRE PSEUDO * : <input for="pseudo" style="border: none;outline: none;" id="commentform" name="pseudo"  value="<?= $this->session->getUserInfo('pseudo') ?>" readOnly="readOnly"></strong></p>
+                     <p class="commentpseudo"><strong>VOTRE PSEUDO * : <input class="commentpseudo2"for="pseudo" id="commentform" name="pseudo"  value="<?= $this->session->getUserInfo('pseudo') ?>" readOnly="readOnly"></strong></p>
                            <!-- value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : ''; ?>"> -->
 
                            

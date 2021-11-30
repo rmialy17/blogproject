@@ -1,8 +1,11 @@
- 
-<div>
- <p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 5%;">Retour aux Blog Posts</a></p> </div>
+ <head>
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+</head>
 
-            <div class="section-inner text-center"style="background-size:cover;margin:0;padding: 0;">
+<div>
+ <p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll" id="returnbtn2">Retour aux Blog Posts</a></p> </div>
+
+            <div class="section-inner text-center" id="addpost">
                 <div class="container" >
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 mt30 wow">
@@ -30,19 +33,19 @@ $content = isset($post) ? htmlspecialchars($post->get('content')) : '';
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 <form action="../public/index.php?route=<?= $route; ?>" method="post">
-    <label for="title"style="color:#303030;">Titre du blog post</label><br>
-    <input type="text" id="title" name="title" value="<?= $title; ?>" style="color:#303030; width: 50%;"><br>
+    <label for="title" id="addpost2">Titre du blog post</label><br>
+    <input type="text" class="addpost3"id="title" name="title" value="<?= $title; ?>"><br>
     <?= isset($errors['title']) ? $errors['title'] : '' ?>
 
-    <label for="chapo"style="text-align: left;color:#303030;">Chapo</label><br>
-    <textarea id="chapo" name="chapo"style="color:#303030;width: 50%;"><?= $chapo; ?></textarea><br>
+    <label for="chapo" id="addpost2">Chapo</label><br>
+    <textarea class="addpost3" id="chapo" name="chapo"><?= $chapo; ?></textarea><br>
     <?= isset($errors['chapo']) ? $errors['chapo'] : '' ?>
 
-    <label for="content"style="color:#303030;">Contenu</label><br>
-    <textarea name="content" id="contenu" cols="30" rows="10"style="color:#303030;width: 50%;"><?= $content; ?></textarea><br>
+    <label for="content"id="addpost2">Contenu</label><br>
+    <textarea name="content" class="addpost3"id="contenu" cols="30" rows="10"><?= $content; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : '' ?>
 
-   <br> <input type="submit" value="<?= $submit; ?>" id="submit" name="submit"style="color:#303030;"></br>
+   <br> <input type="submit" id="addpost2"value="<?= $submit; ?>" id="submit" name="submit"></br>
 </form>
 
 

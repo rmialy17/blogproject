@@ -28,6 +28,7 @@
 
 <!-- Custom CSS -->
     <link href="../templates/assets/css/style.css" rel="stylesheet" type="text/css">
+     
 
     <!-- Custom Fonts -->
     <link href="../templates/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

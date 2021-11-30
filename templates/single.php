@@ -1,6 +1,10 @@
 <?php $this->title = 'Blog post'; ?>
 
-<h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
+<head>
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+</head>
+
+<h2 class="section-subheading secondary-font" id="shows" > 
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('add_comment'); ?>
@@ -8,7 +12,7 @@
 <?= $this->session->show('delete_comment'); ?></h2><br>
 
 <div>
-<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 5%;margin-bottom: -15%;">Retour aux Blog Posts</a></p> </div>
+<p class="mt30" ><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll" id="returnbtn">Retour aux Blog Posts</a></p> </div>
         
         <!-------------Post Title--------------->
         <section id="welcome" >
@@ -26,7 +30,7 @@
                         </div>
         
                         <div id="post-content" class="col-sm-8 col-sm-offset-2 blog-item mb60 wow">
-                            <div class="row" style="margin-top:-10%;text-align: justify;">
+                            <div class="row" id="singlepost">
                                 <div class="col-sm-12 single-post-content">
                                 <h3 class="section-subheading secondary-font">En bref : <?= nl2br(htmlspecialchars($article->getChapo())); ?></h3>
                                 <br><?= nl2br(htmlspecialchars($article->getContent())); ?>
@@ -44,12 +48,12 @@
             <div class="section-inner nopaddingbottom">
                 <div class="container" >
                     <div class="row">
-                        <div class="col-lg-12 mb100 wow" style="text-align: right;margin-top: -10%;">        
+                        <div class="col-lg-12 mb100 wow" id="singlepost2">        
                             <div class="actions"> 
                             <h3 class="section-subheading secondary-font">
                              <br><a href="#comments">Commenter //</a>
                               <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier //</a>
-                             <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>" style="margin-right: 16%;">Supprimer ce post </a></h3>
+                             <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>" id="singlepost3">Supprimer ce post </a></h3>
                             </div>
                         </div>
                     </div>
@@ -60,7 +64,7 @@
     <section>
             <div class="section-inner">
                 <div class="container">
-                    <div class="row" style="margin-top: -30%;padding-bottom: 0%;">
+                    <div class="row" id="singlecomment">
                         <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
                             <div class="mt60 mb50 single-section-title">
                                 <h3>Commentaires</h3>
@@ -72,7 +76,7 @@
        
 
 
- <div class="section-inner"style="margin-top: -70%;padding-top: 0%;" >
+ <div class="section-inner"id="singlecomment2" >
                  <?php               
 
     foreach ($comments as $comment ) { 
@@ -100,7 +104,7 @@
             ?><strong><p class="flag">Ce commentaire à été signalé</p></strong>
             <?php } else {
                 ?>
-<a class="btn btn-primary pull-right"href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>"style="margin-top: -6%;margin-right: 20%;">Signaler le commentaire</a>
+<a class="btn btn-primary pull-right" id="commentbtn" href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>">Signaler le commentaire</a>
         <?php }
         ?>
                                  </div>
@@ -129,7 +133,7 @@
         <section>
             <div class="section-inner">
                 <div class="container">
-                    <div class="row" style="margin-top: -15%;">          
+                    <div class="row" id="singlecomment3">          
                         <div id="comments-list" class="col-sm-8 col-sm-offset-2 gap wow">
                             <div class="media">
                                 <div class="pull-left">
@@ -188,7 +192,7 @@
         </div>   
     </section>
 
-        <p><a class="btn btn-primary mt30" href="#" style="margin-left: 50%;">Haut de page</a>
+        <p><a class="btn btn-primary mt30" id="singlebtn"href="#">Haut de page</a>
                         </p>
                  
                         

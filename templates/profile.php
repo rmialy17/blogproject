@@ -6,8 +6,14 @@ $user = $this->session->get('user');
 //TODO: si non connecté ou connexion espirée, redirect login
 ?>
 
-<h2 class="section-subheading secondary-font" style="font-family: serif;font-style: italic;color: #F4A460;margin-top: 5%;margin-bottom: -5%;"> 
-<?= $this->session->show('update_password'); ?></h2>
+<head>
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+</head>
+
+<h2 class="section-subheading secondary-font" id="profileh2"> 
+<?= $this->session->show('update_password'); ?></h2><br>
+
+ <p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"id="returnbtn">Retour aux Blog Posts</a></p>
 
 <section id="welcome">
             <div class="section-inner">
@@ -15,7 +21,7 @@ $user = $this->session->get('user');
 echo $this->session->show('not_admin');
 ?>
 
-                <div class="container"style="margin-left: 3%;">
+                <div class="container"id="profile1">
                     <div class="row">
                         <div class="col-lg-12 mb100 wow">
                             <h2 class="section-heading">Votre profil</h2>
@@ -26,21 +32,21 @@ echo $this->session->show('not_admin');
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6"style="margin-left: 1%;">
+                        <div class="col-md-6"id="profile2">
                             <p class="lead"><strong>Référence du compte: </strong> <?= $this->session->getUserInfo('id') ?> </p>
                             <p class="lead"><strong>Identifiant : </strong> <?= $this->session->getUserInfo('pseudo'); ?> </p>
                             <p class="lead"><strong>Type du compte : </strong> <?= $this->session->getUserInfo('role') ?></p>
                             <p>Vous avez la possibilité de modifier votre mot de passe ou de supprimer votre compte : </p>
                             <p class="mt30"><a href="../public/index.php?route=updatePassword" class="btn btn-primary btn-theme page-scroll">Modifier mon mot de passe</a>
-                            <a href="../public/index.php?route=deleteAccount" class="btn btn-primary btn-theme page-scroll" style="margin-left:2%;">Supprimer mon compte</a></p>
+                            <a href="../public/index.php?route=deleteAccount" class="btn btn-primary btn-theme page-scroll" id="profile3">Supprimer mon compte</a></p>
                         </div>
 
-                        <div class="col-md-6"style="margin-left: -10%;">
+                        <div class="col-md-6"id="profile4">
                             <img src="assets/img/isometric-ipad-white.png" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="" >
                         </div>
                     </div>
                 </div>
                         
             </div>
-                  <p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"style="margin-left: 4%;">Retour aux Blog Posts</a></p>      
+                       
         </section>

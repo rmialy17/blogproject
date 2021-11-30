@@ -16,6 +16,8 @@
 
     <title>MonBlogPro</title>
 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/animate.css" rel="stylesheet">
@@ -23,6 +25,7 @@
 
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/blog.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -41,29 +44,31 @@
                     <div class="clearfix">
                         <ul class="list-inline social-links wow pull-left">
                             <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
+                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li> 
+                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                                </li>
                         </ul>
 
-                        <div class="pull-right text-right">
+                        <div class="pull-right text-right"id="email">
                             <ul class="list-inline">
                                 <li>
-                                    <div><a href="#contact-tabs"><i class="fa fa-envelope-o"></i> mialy.razaf@gmail.com</a></div>
+                                    <div ><a href="#contact-tabs"><i class="fa fa-envelope-o"></i> mialy.razaf@gmail.com</a></div>
+                                </li><br>
+                            </ul>
+                            <ul class="list-inline">
+                                <li>
+                                  
                                 </li><br>
                             </ul>
                         </div>
@@ -73,15 +78,15 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
-                    <a class="navbar-brand smoothie logo logo-light" href="bloghome.php"><img src="assets/img/logo/logo_white_large.png" alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="bloghome.php"><img src="assets/img/logo/logo_large.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-light" href="../templates/bloghome.php"><img src="assets/img/logo.png"alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="../templates/bloghome.php"><img src="assets/img/logo_reverse.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown" >
-                            <a href="bloghome.php" class="dropdown-toggle" data-hover="dropdown">Accueil</span></a>
+                            <a href="../templates/bloghome.php" class="dropdown-toggle" data-hover="dropdown">Accueil</span></a>
                                 </li>
                                 
                         <li class="dropdown">
@@ -99,9 +104,6 @@
                         </li>
                         <li class="dropdown">
                             <a href="#contact-tabs" class="dropdown-toggle" data-hover="dropdown">Contact</a>
-                        </li>
-                         <li class="dropdown">
-                            <a href="../public/index.php?route=login" class="dropdown-toggle" data-hover="dropdown">Connexion</a>
                         </li>  
                         
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -490,11 +492,11 @@
                 </div>
         </section>
 
-        <section class="dark-wrapper opaqued parallax" data-parallax="scroll"data-image-src="assets/img/bg/bg6.jpg" data-speed="0.7" >
+        <section class="dark-wrapper">
             <div class="contact-tabs" id="contact-tabs" role="tabpanel">
 
                 <!-- Nav tabs -->
-                <ul class="nav nav-justified icon-tabs" id="nav-tabs" role="tablist">
+               <ul class="nav nav-justified icon-tabs" id="nav-tabs" role="tablist">
                     <li role="presentation" class="ptb smoothie active">
                         <a href="#contact1" aria-controls="contact1" role="tab" data-toggle="tab">
                             <span class="tabtitle heading-font smoothie text-right">Me contacter</span>
@@ -516,13 +518,28 @@
                                     <div class="row">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div id="message"></div>
-                                            <form method="post" action="sendemail.php" id="contactform" class="main-contact-form wow">
-                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
-                                                <input type="text" class="form-control col-md-4" name="firstname" placeholder="Votre prénom*" id="firstname" required data-validation-required-message="Merci d'indiquer votre prénom." />
+                                            <form method="post" action="contact.php"id="contactform">
+                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre prenom / nom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
                                                 <input type="text" class="form-control col-md-4" name="email" placeholder="votre email *" id="email" required data-validation-required-message="Merci d'indiquer votre adresse email." />
                                                 <textarea name="comments" class="form-control" id="comments" placeholder="Votre message*" required data-validation-required-message="Merci d'indiquer votre message."></textarea>
                                                 <input class="btn btn-primary mt30 btn-white pull-right" type="submit" name="submit" value="Envoyer" />
-                                            </form>
+                                           </form>
+                                           <p>*Champs obligatoires</p>
+                                            <?php
+ // if (isset($_POST['comments'])) {
+ //        $position_arobase = strpos($_POST['email'], '@');
+ //        if ($position_arobase === false)
+ //            echo '<p>Votre email doit comporter un arobase.</p>';
+ //        else {
+ //            $retour = mail('mialy.razaf@gmail.com', $_POST['name'], $_POST['comments'], 'From: ' . $_POST['email']);
+ //            if($retour)
+ //                echo '<p>Votre message a été envoyé.</p>';
+ //            else
+ //                echo '<p>Erreur.</p>';
+ //        }
+ //    }
+    ?>
+ 
                                         </div>
                                     </div>
                                 </div>
@@ -545,35 +562,41 @@
                         </div>
 
                         <div class="col-sm-8 col-sm-offset-2">
-                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
+                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">  
                                 <li>
-                                    <img src="assets/img/logo/logo1.png" class="img-responsive" alt="">
+                                    <img src="assets/img/img_bloghome/logo-info5.jpg" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo2.png" class="img-responsive" alt="">
+                                    <img src="assets/img/img_bloghome/logo-info4.jpg" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo3.png" class="img-responsive" alt="">
+                                    <img src="assets/img/img_bloghome/logo-info.jpg" class="img-responsive" alt="">
+                                </li>
+                               
+                                <li>
+                                    <img src="assets/img/logo/logo7.png" class="img-responsive" alt="">
+                                </li>   
+                                <li>
+                                    <img src="assets/img/img_bloghome/logo-info6.jpg" class="img-responsive" alt="">
+                                </li>    
+                                <li>
+                                    <img src="assets/img/img_bloghome/logo-info3.jpg" class="img-responsive" alt="">
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo4.png" class="img-responsive" alt="">
-                                </li>
-                                <li>
-                                    <img src="assets/img/logo/logo5.png" class="img-responsive" alt="">
-                                </li>
-                                <li>
-                                    <img src="assets/img/logo/logo6.png" class="img-responsive" alt="">
+                                    <img src="assets/img/logo/logo8.png" class="img-responsive" alt="">
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <p class="mt30"><a href= "../public/index.php?route=login" class="btn btn-primary btn-theme page-scroll "target="blank">Voir les blog posts</a></p>
+                    <p class="mt30"><a href="../public/index.php?route=home"  class="btn btn-primary btn-theme page-scroll "target="blank">Voir les blog posts</a></p>
                 </div>
             </div>
         </section>
 
-        <div id="footer-wrapper">
+        <!----------------------footer-------------------------->
+<section>
+        <div id="footer-wrapper" class="dark-footer-image-bg">
             <section class="dark-wrapper">
                 <div class="section-inner">
                     <div class="container">
@@ -609,7 +632,25 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div class="col-md-4">
+                                <div class="widget">
+                                    <h4 class="widget-title">Popular Tags</h4>
+                                    <div class="tagcloud">
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Local</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Business</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Media</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Photogtraphy</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Aid</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Fashion</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">News</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Cars</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Global Affairs</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Music</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Downloads</a>
+                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">MP3</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -618,123 +659,43 @@
             <footer class="white-wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12 text-center">
+                        <div class="col-md-6 text-left">
                             <ul class="list-inline social-links wow">
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <li> 
+                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
                         </div>
 
-                        <hr class="thin-hr" />
-
-                        <div class="col-md-12 text-center wow">
-                            <span class="copyright">Copyright 2021. Designed by DISTINCTIVE THEMES</span>
+                        <div class="col-md-6 text-right">
+                            <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
 
-        </div>
+    </div>
+</section>
 
-        <div class="flexpanel">
-            <div class="viewport-wrap">
-                <div class="viewport">
-                    <div class="widget mb50">
-                        <h4 class="widget-title">Latest Articles</h4>
-                        <div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Panic In London</a></span>
-                                    <small class="muted">Posted 14 April 2015</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">New iPhone News</a></span>
-                                    <small class="muted">Posted 14 April 2015</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="assets/img/widget/widget3.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Our Year In Review</a></span>
-                                    <small class="muted">Posted 14 April 2015</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="assets/img/widget/widget4.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">jQuery Tutorial</a></span>
-                                    <small class="muted">Posted 14 April 2015</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="assets/img/widget/widget5.jpg" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Sheen Interview</a></span>
-                                    <small class="muted">Posted 14 April 2015</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget mb50">
-                        <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                        <div class="tagcloud">
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Local</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Business</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Media</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Photogtraphy</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Aid</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Fashion</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">News</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Cars</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Global Affairs</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Music</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">Downloads</a>
-                            <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics">MP3</a>
-                        </div>
-                    </div>
-                    <div class="widget about-us-widget mb50">
-                        <h4 class="widget-title">About Kompleet</h4>
-                        <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <!----------------script js-------------->
 
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/plugins.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        
         <script src="assets/js/init.js"></script>
  
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

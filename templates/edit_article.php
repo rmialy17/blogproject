@@ -8,5 +8,5 @@
 
 <div>
     <?php include 'form_article.php'; ?>
-    <a href="../public/index.php?route=home">Retour à l'accueil Blog Posts</a>
+    </a>
 </div>
