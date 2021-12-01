@@ -1,5 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+
+                <!-----anti csrf----->
+<?php
+//On démarre les sessions
+session_start();
+//On génére un jeton totalement unique (c'est capital :D)
+$token = uniqid(rand(), true);
+//Et on le stocke
+$_SESSION['token'] = $token;
+//On enregistre aussi le timestamp correspondant au moment de la création du token
+$_SESSION['token_time'] = time();
+
+
+?>
+
+
+          <!----------fin anti csrf---------->
+
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -516,7 +534,11 @@
                     </li>
                 </ul>
 
-                <!-- Tab panes -->
+                
+
+
+                    <!-- Tab panes -->
+
                 <div class="tab-content" id="tabs-collapse">
                     <div role="tabpanel" class="tab-pane fade in active" id="contact1">
                         <div id="contact-inner" class="nopadding-lr">
@@ -526,27 +548,20 @@
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div id="message"></div>
                                             <form method="post" action="contact.php"id="contactform">
-                                                <input type="text" class="form-control col-md-4" name="name" placeholder="Votre prenom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
+                                                <input type="text" class="form-control col-md-4" name="firstname" placeholder="Votre prenom*" id="firstname" required data-validation-required-message="Merci d'indiquer votre prénom." /> 
                                                 <input type="text" class="form-control col-md-4" name="name" placeholder="Votre nom*" id="name" required data-validation-required-message="Merci d'indiquer votre nom." /> 
-                                                <input type="text" class="form-control col-md-4" name="email" placeholder="votre email *" id="email" required data-validation-required-message="Merci d'indiquer votre adresse email." />
+                                                 <input type="hidden" class="form-control col-md-4" name="website" placeholder="Votre nom*" id="website" />
+                                                <input type="text" class="form-control col-md-4" name="email" placeholder="votre email *" id="email" required data-validation-required-message="Merci d'indiquer votre adresse email." /> 
+
+                                                <input type="hidden" class="form-control" name="token" id="token" value="<?php
+//Le champ caché a pour valeur le jeton
+echo $token;
+    ?>"/>
                                                 <textarea name="comments" class="form-control" id="comments" placeholder="Votre message*" required data-validation-required-message="Merci d'indiquer votre message."></textarea>
+                                               
                                                 <input class="btn btn-primary mt30 btn-white pull-right" type="submit" name="submit" value="Envoyer" />
                                            </form>
                                            <p>*Champs obligatoires</p>
-                                            <?php
- // if (isset($_POST['comments'])) {
- //        $position_arobase = strpos($_POST['email'], '@');
- //        if ($position_arobase === false)
- //            echo '<p>Votre email doit comporter un arobase.</p>';
- //        else {
- //            $retour = mail('mialy.razaf@gmail.com', $_POST['name'], $_POST['comments'], 'From: ' . $_POST['email']);
- //            if($retour)
- //                echo '<p>Votre message a été envoyé.</p>';
- //            else
- //                echo '<p>Erreur.</p>';
- //        }
- //    }
-    ?>
  
                                         </div>
                                     </div>

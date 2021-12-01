@@ -94,7 +94,9 @@ $(document).ready(function(){
       $('#submit').attr('disabled','disabled');
       $.post(action, {
         name: $('#name').val(),
+        firstname: $('#firstname').val(),
         email: $('#email').val(),
+        token: $('#token').val(),
         website: $('#website').val(),
         comments: $('#comments').val()
       },
