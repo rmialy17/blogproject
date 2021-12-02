@@ -12,8 +12,6 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
-    <!-- Custom CSS -->
-    <!-- <link href="../templates/assets/css/admin.css" rel="stylesheet"> -->
 <link href="../templates/assets/css/admin2.css" rel="stylesheet"> 
 <link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
 
@@ -35,17 +33,12 @@
     <div class="row">
 
         <section class="content">
-            <!-- <center><h1>Gestion des données</h1></center> -->
+           
             <div class="col-md-8 col-md-offset-2">
-                <!-- <div class="panel panel-default"> -->
+               
                     <div class="panel-body">
                         <div class="pull-right">
                           <div class="btn-group">
-                                <!-- <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
-                                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Commentaires</button>
-                                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button>
-                                
-                                <button type="button" class="btn btn-default btn-filter" data-target="all">Tout</button> -->
 
                                 <a href="#posts"><button type="button" class="btn btn-success">Gestion des Posts</button></a>
                                 <a href="#comments"><button type="button" class="btn btn-warning" data-target="pendiente">Gestion des Commentaires</button></a>
@@ -154,11 +147,9 @@
 
                 <!---------------modal-------------->
 <div class="comment-modal" >
-    <!-- <div class="comment-modal" > -->
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <!-- <button type="button" class="closex" aria-hidden="true" data-dismiss="modal" onclick="closeModal()">×</button> -->
                 <h4 class="modal-title">Contenu du commentaire</h4>
             </div>
             <div class="modal-body">
@@ -172,7 +163,7 @@
 </div>
             <!-----------------end modal-------------->
 
-<div class="container">
+<div class="container" id="comments">
     <div class="row">
 
         <section class="content">
@@ -182,11 +173,6 @@
                     <div class="panel-body">
                         <div class="pull-right">
                             <div class="btn-group">
-                              <!--   <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
-                                <button type="button" class="btn btn-warning btn-filter"data-target="pendiente" >Gestion des Commentaires</button>
-                                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button>
-                                
-                                <button type="button" class="btn btn-default btn-filter" data-target="all">Tout</button> -->
 
                                  <p><a href="#posts"><button type="button" class="btn btn-success">Gestion des Posts</button></a>
                                 <a href="#comments"><button type="button" class="btn btn-warning" data-target="pendiente">Gestion des Commentaires</button></a>
@@ -232,17 +218,15 @@
                                                     <td><?= htmlspecialchars($comment->getId());?></td>
                                                     <p class="summary"></p>
                                        
-                                                   <!-- <td><div align="center"><button class="popup-button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>" onclick="showModal(<?=htmlspecialchars($comment->getId())?>)" > Voir le commentaire</button></div> </td><--> 
                                                 <td> 
                 <a href="#commentsmodal"><button class="btn btn-primary"type="button"data-modal="popup_<?= htmlspecialchars($comment->getId()) ;?>" onclick="showModal(<?=htmlspecialchars($comment->getId())?>)"><i class="icon icon-check icon-lg" ></i> Voir le commentaire</button></a>
            
 
               <!-------------Modal content------------->
 
-                    <!-- <div class="modal-body"> -->
-              <!--   <p>Corps d!e la modale</p> -->
+                   
                 <input type="hidden" id="popup_<?= htmlspecialchars($comment->getId());?>"value="<?= substr(htmlspecialchars($comment->getContent()), 0, 150);?>">
-            <!-- </div> -->
+          
                     <!----------------end modal content-------------->
                 </td>
 
@@ -300,9 +284,7 @@
                     <div class="panel-body">
                         <div class="pull-right">
                             <div class="btn-group">
-                                <!-- <button type="button" class="btn btn-success btn-filter" data-target="pagado">Posts</button>
-                                <button type="button" class="btn btn-warning btn-filter"data-target="pendiente" >Gestion des Commentaires</button>
-                                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Utilisateurs</button> -->
+                               
                                  <p><a href="#posts"><button type="button" class="btn btn-success">Gestion des Posts</button></a>
                                 <a href="#comments"><button type="button" class="btn btn-warning" data-target="pendiente">Gestion des Commentaires</button></a>
                                 <a href="#users"><button type="button" class="btn btn-danger" data-target="cancelado">Données Utilisateurs</button></a>
