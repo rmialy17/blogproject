@@ -32,9 +32,9 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 
     ini_set("SMTP", "smtp.free.fr");
         }
-    }
+    }else echo'erreur';
 }
-else echo'erreur';
+
 
     ?>
 
