@@ -33,9 +33,9 @@
     <div class="row">
 
         <section class="content">
-            <!-- <center><h1>Gestion des données</h1></center> -->
+           
             <div class="col-md-8 col-md-offset-2">
-                <!-- <div class="panel panel-default"> -->
+               
                     <div class="panel-body">
                         <div class="pull-right">
                           <div class="btn-group">
