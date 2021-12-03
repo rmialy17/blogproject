@@ -5,9 +5,10 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                     //-----anti csrf-----//
 
 //On démarre les sessions
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+session_start();}
 //On génére un jeton totalement unique (c'est capital :D)
-$comment_token = uniqid(rand(), true);
+$comment_token = bin2hex(random_bytes(32));
 //Et on le stocke
 $_SESSION['comment_token'] = $comment_token;
 //On enregistre aussi le timestamp correspondant au moment de la création du token
@@ -16,7 +17,7 @@ $_SESSION['comment_token_time'] = time();
 
             //----------fin anti csrf----------//
 
-include 'comment_token';  
+include 'comment_token.php';  
 
 ?>
 

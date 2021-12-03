@@ -2,14 +2,15 @@
 
  <?php
             //-----------anti csrf----------//
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+session_start();}
 //On va vérifier :
 //Si le jeton est présent dans la session et dans le formulaire
 if(isset($_SESSION['comment_token']) && isset($_SESSION['comment_token_time']) && isset($_POST['comment_token']))
 {
     
     //Si le jeton de la session correspond à celui du formulaire
-    if($_SESSION['comment_token'] === $_POST['comment_token'])
+    if(hash_equals($_SESSION['comment_token'], $_POST['comment_token']))
     {
         //On stocke le timestamp qu'il était il y a 15 minutes
         $timestamp_ancien = time() - (15*60);
