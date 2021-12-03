@@ -19,23 +19,21 @@ if(isset($_SESSION['comment_token']) && isset($_SESSION['comment_token_time']) &
         {
             
             if (isset($_POST['comments'])) {
-        $position_arobase = strpos($_POST['email'], '@');
-        if ($position_arobase === false)
-            echo '<p>Votre email doit comporter un arobase.</p>';
-        else {
-            $retour = mail('mialy.razaf@gmail.com', $_POST['firstname'].' '. $_POST['name'],   $_POST['comments'], 'From: ' . $_POST['email']);
-            if($retour)
-                echo '<p>Votre message a été envoyé.</p>';
-            else
-                echo '<p>Erreur.</p>';
+                $position_arobase = strpos($_POST['email'], '@');
+                if ($position_arobase === false)
+                    echo '<p>Votre email doit comporter un arobase.</p>';
+                else 
+                    $retour = mail('mialy.razaf@gmail.com', $_POST['firstname'].' '. $_POST['name'],   $_POST['comments'], 'From: ' . $_POST['email']);
+                if($retour)
+                        echo '<p>Votre message a été envoyé.</p>';
+                else
+                        echo '<p>Erreur.</p>'; 
+            }
+         
+            ini_set("SMTP", "smtp.free.fr");
         }
-    }
-
-    ini_set("SMTP", "smtp.free.fr");
-        }
-    }
+    } else echo'erreur';
 }
-else echo'erreur';
 
     ?>
 
