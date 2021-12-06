@@ -44,6 +44,12 @@ margin-top: -5%;
 	margin-top:-10%;
 }
 
+.homebtn3{
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
  /*----------------single-------------------*/
 #returnbtn{
 	margin-left: 5%;
