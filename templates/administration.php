@@ -385,6 +385,16 @@ if(isset($_SESSION['admin_token']) && isset($_SESSION['admin_token_time']) && is
                         </div>
                     </div>
                 </div>
+
+                <!------------------end anti csrf------------>
+
+ <?php        
+            }
+                        
+        }else echo'erreur'; 
+    }
+
+?>
             
             <div class="row paging text-center">
                 <br><p><a class="btn btn-primary mt30" href="#" >Haut de page</a>
@@ -404,15 +414,7 @@ if(isset($_SESSION['admin_token']) && isset($_SESSION['admin_token_time']) && is
     </div>
 </div>  
 
-  <!------------------end anti csrf------------>
-
- <?php        
-            }
-                        
-        }else echo'erreur'; 
-    }
-
-?>
+  
 
  <!-----js----------->
 
