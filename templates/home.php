@@ -1,5 +1,20 @@
 <?php $this->title = "Accueil blog posts"; ?>
 
+ <?php
+                //-----anti csrf-----//
+
+        //On démarre les sessions
+        if (session_status() === PHP_SESSION_NONE) {
+        session_start();}
+        //On génére un jeton totalement unique (c'est capital :D)
+        $admin_token = bin2hex(random_bytes(32));
+        //Et on le stocke
+        $_SESSION['admin_token'] = $admin_token;
+        //On enregistre aussi le timestamp correspondant au moment de la création du token
+        $_SESSION['admin_token_time'] = time();?>
+
+            <!----------fin anti csrf---------->
+
 <head>
 <link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
 </head>
@@ -28,28 +43,15 @@ if ($this->session->getUserInfo('pseudo')) :
     <h2 class="section-heading">Bonjour <?= ucfirst(htmlspecialchars($this->session->getUserInfo('pseudo')))?></h2>
                             <br><h3 class="section-subheading secondary-font"> <a href="../public/index.php?route=logout">Déconnexion //</a>
     <a href="../public/index.php?route=profile"> Profil</a>
-    <?php
-                //-----anti csrf-----//
+   
+ <?php if($this->session->getUserInfo('role') === 'admin') :?>
 
-        //On démarre les sessions
-        if (session_status() === PHP_SESSION_NONE) {
-        session_start();}
-        //On génére un jeton totalement unique (c'est capital :D)
-        $admin_token = bin2hex(random_bytes(32));
-        //Et on le stocke
-        $_SESSION['admin_token'] = $admin_token;
-        //On enregistre aussi le timestamp correspondant au moment de la création du token
-        $_SESSION['admin_token_time'] = time();?>
-
-            <!----------fin anti csrf---------->
- <?php
-     if($this->session->getUserInfo('role') === 'admin') :?>
     <form action="../public/index.php?route=administration" method="post">
-    <input type="text" class="form-control" name="admin_token" id="admin_token" value="<?php
+    <input type="hidden" class="form-control" name="admin_token" id="admin_token" value="<?php
                     //Le champ caché a pour valeur le jeton
                      echo $admin_token;?>"/>
                      
-      <input type="submit" class="homebtn3" value="// administration">
+    <input type="submit" class="homebtn3" value="// administration"></form></h3>
     <?php endif;?>
 <?php
 else:

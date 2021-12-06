@@ -1,4 +1,29 @@
-<?php $this->title = 'Administration'; ?>
+<?php $this->title = 'Administration'; 
+
+
+            //-----------anti csrf----------//
+ if (session_status() === PHP_SESSION_NONE)
+            {
+                session_start();}
+//On va vérifier :
+//Si le jeton est présent dans la session et dans le formulaire
+if(isset($_SESSION['admin_token']) && isset($_SESSION['admin_token_time']) && isset($_POST['admin_token']))
+{
+    
+    //Si le jeton de la session correspond à celui du formulaire
+    if($_SESSION['admin_token'] === $_POST['admin_token'])
+    {
+        //On stocke le timestamp qu'il était il y a 15 minutes
+        $timestamp_ancien = time() - (15*60);
+        //Si le jeton n'est pas expiré
+        if($_SESSION['admin_token_time'] >= $timestamp_ancien)
+        { ?>
+            
+   
+   
+
+   <!------------------anti csrf------------>
+
 
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
@@ -374,6 +399,16 @@
         
     </div>
 </div>  
+
+  <!------------------end anti csrf------------>
+
+ <?php        
+            }
+                        
+        }else echo'erreur'; 
+    }
+
+?>
 
  <!-----js----------->
 
