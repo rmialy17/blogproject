@@ -47,7 +47,7 @@ $_SESSION['comment_token_time'] = time();
                     //Le champ caché a pour valeur le jeton
                      echo $comment_token;?>"/>
 
-                    <?php include 'anti_csrf/comment_token.php';?>
+                    <?php include 'anti_csrf/login_token.php';?>
                     
                     <a href="../public/index.php?route=flagComment&commentId"><input type="submit" class="btn btn-primary pull-right" value="<?= $submit; ?>" name="submit" id="submit"></a>
                   

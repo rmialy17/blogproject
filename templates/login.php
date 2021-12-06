@@ -1,4 +1,23 @@
-<?php $this->title = "Connexion" ?>
+<?php $this->title = "Connexion";
+
+                    //-----anti csrf-----//
+
+//On démarre les sessions
+if (session_status() === PHP_SESSION_NONE) {
+session_start();}
+//On génére un jeton totalement unique (c'est capital :D)
+$login_token = bin2hex(random_bytes(32));
+//Et on le stocke
+$_SESSION['login_token'] = $login_token;
+//On enregistre aussi le timestamp correspondant au moment de la création du token
+$_SESSION['login_token_time'] = time();
+
+
+            //----------fin anti csrf----------//
+
+?>
+
+
 
  <head>
 <link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
@@ -24,6 +43,9 @@
         <input type="text" class="logincolor2"id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : '';?>"><br>
         <label for="password" id="logincolor">Mot de passe</label><br>
         <input type="password" class="logincolor2"id="password" name="password"><br>
+        <input type="text" class="form-control" name="login_token" id="login_token" value="<?php
+                    //Le champ caché a pour valeur le jeton
+                     echo $login_token;?>"/>
         <br><input type="submit" class="logincolor2" value="Connexion" id="submit" name="submit">
         </form>
            <br><p><span class="meta-item" ><i class="pe-icon pe-7s-folder" id="logincolor"></i><a href="../public/index.php?route=register"><strong> Pas encore inscrit ? </strong><span class="meta-item" id="logincolor">C'est par ici</span></span></a></p>
