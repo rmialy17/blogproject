@@ -43,7 +43,7 @@ $_SESSION['login_token_time'] = time();
         <input type="text" class="logincolor2"id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')) : '';?>"><br>
         <label for="password" id="logincolor">Mot de passe</label><br>
         <input type="password" class="logincolor2"id="password" name="password"><br>
-        <input type="text" class="form-control" name="login_token" id="login_token" value="<?php
+        <input type="hidden" class="form-control" name="login_token" id="login_token" value="<?php
                     //Le champ caché a pour valeur le jeton
                      echo $login_token;?>"/>
         <br><input type="submit" class="logincolor2" value="Connexion" id="submit" name="submit">
