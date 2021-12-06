@@ -44,6 +44,19 @@ margin-top: -5%;
 	margin-top:-10%;
 }
 
+.homebtn3{
+	border: none;
+	outline: none;
+	background-color: transparent;
+position: absolute;
+margin-top: -1.7%;
+margin-left: 15.7%;
+}
+
+.homebtn3:hover{
+	 color: #c2253e;
+}
+
  /*----------------single-------------------*/
 #returnbtn{
 	margin-left: 5%;
