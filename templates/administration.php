@@ -1,6 +1,40 @@
-<?php $this->title = 'Administration'; 
+<?php $this->title = 'Administration'; ?>
+
+<h2 class="section-subheading secondary-font" id="shows2" > 
+<?= $this->session->show('delete_article'); ?>
+<?= $this->session->show('unflag_comment'); ?>
+<?= $this->session->show('delete_comment'); ?>
+<?= $this->session->show('delete_user'); ?>
+<?=$this->session->show('update_role');?></h2><br>
 
 
+<head>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<link href="../templates/assets/css/admin2.css" rel="stylesheet"> 
+<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
+
+<!-- fichier datatables -->
+
+<link rel="stylesheet" type="text/css" href="../templates/assets/DataTables/media/css/jquery.dataTables.min.css">
+
+    <script type="text/javascript" language="javascript" class="init"></script>
+    
+   <!------ Include the above in your HEAD tag ----------> 
+</head>
+
+
+
+<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll">Retour aux Blog Posts</a></p>    
+
+
+<body>
+
+<?php
             //-----------anti csrf----------//
  if (session_status() === PHP_SESSION_NONE)
             {
@@ -23,36 +57,6 @@ if(isset($_SESSION['admin_token']) && isset($_SESSION['admin_token_time']) && is
    
 
    <!------------------anti csrf------------>
-
-
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('unflag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('delete_user'); ?>
-<?=$this->session->show('update_role');?>
-
-
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-<link href="../templates/assets/css/admin2.css" rel="stylesheet"> 
-<link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
-
-<!-- fichier datatables -->
-
-<link rel="stylesheet" type="text/css" href="../templates/assets/DataTables/media/css/jquery.dataTables.min.css">
-
-    <script type="text/javascript" language="javascript" class="init"></script>
-    
-   <!------ Include the above in your HEAD tag ----------> 
-
-
-
-<p class="mt30"><a href="../public/index.php?route=home"class="btn btn-primary btn-theme page-scroll"id="admin1">Retour aux Blog Posts</a></p>    
-
-<body>
 
 <div class="container">
     <div class="row">
