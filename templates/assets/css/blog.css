@@ -174,8 +174,13 @@ width: 50%;
 
 /*------------------------admin css--------------------------*/
 
-#admin1{
-	margin-left: 4%;
+#shows2{
+	font-family: serif;
+font-style: italic;
+color: #F4A460;
+margin-top: 5%;
+margin-bottom: -5%;
+margin-left: 0%;
 }
 			/*----posts table----*/
 #poststab{
