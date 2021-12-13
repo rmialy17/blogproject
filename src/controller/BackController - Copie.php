@@ -76,6 +76,7 @@ class BackController extends Controller
                 $post->set('title', $article->getTitle());
                 $post->set('chapo', $article->getChapo());
                 $post->set('content', $article->getContent());
+                $post->set('lien', $article->getLink());
                 $post->set('author', $article->getAuthor());
                 //Si le formulaire n'a pas été soumis, on affiche l'article à modifier
                 $this->view->render('edit_article', [
@@ -132,9 +133,8 @@ class BackController extends Controller
             if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'User');
                 if (!$errors) {
-                    // var_dump($this->session);
-                    $this->userDAO->updatePassword($post, $this->session->get('user'));
-                    $this->session->set('update_password', 'Le mot de passe à bien été modifié');
+                    $this->userDAO->updatePassword($post, $this->session->get('user'), $this->session->get('user'));
+                    $this->session->set('update_password', 'Le mot de passe à bien été modifié',var_dump($password));
                     header('Location: ../public/index.php?route=profile');
                 } else {
                     $this->view->render('updatePassword', [
@@ -179,16 +179,18 @@ class BackController extends Controller
      */
     public function administration()
     {
-        if ($this->checkAdmin()) {
-            $articles = $this->articleDAO->getArticles();
-            $flagComments = $this->commentDAO->getFlagComments();
-            $users = $this->userDAO->getUsers();
-            $this->view->render('administration', [
-                'articles' => $articles,
-                'comments' => $flagComments,
-                'users' => $users
-            ]);
-        }
+        // if ($post->get('submit')) {
+            if ($this->checkAdmin()) {
+                $articles = $this->articleDAO->getArticles();
+                $flagComments = $this->commentDAO->getFlagComments();
+                $users = $this->userDAO->getUsers();
+                $this->view->render('administration', [
+                    'articles' => $articles,
+                    'comments' => $flagComments,
+                    'users' => $users
+                ]);
+            }
+        // }
     }
 
     public function unflagComment($commentId)
@@ -275,8 +277,7 @@ class BackController extends Controller
     {
         $this->commentDAO->flagComment($commentId);
         $this->session->set('flag_comment', 'Le commentaire à bien été signalé, merci');
-        // header('Location: ../public/index.php?route=home');
-         header('Location: ../public/index.php?route=article&articleId=' . $articleId);
+        header('Location: ../public/index.php?route=home');
     }
 
 
