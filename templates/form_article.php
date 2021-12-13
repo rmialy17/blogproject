@@ -62,7 +62,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
     <textarea name="content" class="addpost3"id="contenu" cols="30" rows="10"><?= $content; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : '' ?>
 
-    <input type="text" class="form-control" name="article_token" id="article_token" value="<?php
+    <input type="hidden" class="form-control" name="article_token" id="article_token" value="<?php
                     //Le champ caché a pour valeur le jeton
                      echo $article_token;?>"/>
 
