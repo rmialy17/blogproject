@@ -64,7 +64,7 @@ class UserDAO extends DAO
         ]);
         $isUnique = $result->fetchColumn();
         if ($isUnique) {
-            return "<p>Le pseudo existe déjà</p>";
+            return "<p style='color:red;'>Le pseudo existe déjà</p>";
         }
     }
 
