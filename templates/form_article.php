@@ -1,3 +1,20 @@
+ <?php
+            //-----anti csrf-----//
+
+//On démarre les sessions
+if (session_status() === PHP_SESSION_NONE) {
+session_start();}
+//On génére un jeton totalement unique (c'est capital :D)
+$article_token = bin2hex(random_bytes(32));
+//Et on le stocke
+$_SESSION['article_token'] = $article_token;
+//On enregistre aussi le timestamp correspondant au moment de la création du token
+$_SESSION['article_token_time'] = time();
+
+
+            //----------fin anti csrf----------//
+?>
+
  <head>
 <link href="../templates/assets/css/blog.css" rel="stylesheet" type="text/css">
 </head>
@@ -44,6 +61,10 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
     <label for="content"id="addpost2">Contenu</label><br>
     <textarea name="content" class="addpost3"id="contenu" cols="30" rows="10"><?= $content; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : '' ?>
+
+    <input type="text" class="form-control" name="article_token" id="article_token" value="<?php
+                    //Le champ caché a pour valeur le jeton
+                     echo $article_token;?>"/>
 
    <br> <input type="submit" id="addpost2"value="<?= $submit; ?>" id="submit" name="submit"></br>
 </form>

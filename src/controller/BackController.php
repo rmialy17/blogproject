@@ -21,25 +21,43 @@ class BackController extends Controller
             $post->trimAll();
             //Si le formulaire d'ajout à été soumis
             if ($post->get('submit')) {
-                //Validation des données avant soumission à la BD
-                $errors = $this->validation->validate($post, 'Article');
-                if (!$errors) {
-                    $this->articleDAO->addArticle($post, $this->session->getUserInfo('id'));
-                    //Création d'un message à afficher dans la session
-                    $this->session->set('add_article', 'Le nouveau post à bien été ajouté');
-                    //TODO: Redirection vers l'article crée : nécessite de récupérer son id après création
-                    header('Location: ../public/index.php?route=home');
-                } else {
-                    //Si il y a des erreurs, tjrs en modification avec données et errors en plus
-                    $this->view->render('add_article', [
-                        'post' => $post,
-                        'errors' => $errors
-                    ]);
-                }
+
+                                    //-----------anti csrf----------//
+                if (session_status() === PHP_SESSION_NONE)
+                {
+                session_start();}
+                    //On va vérifier :
+                    //Si le jeton est présent dans la session et dans le formulaire
+                    if(isset($_SESSION['article_token']) && isset($_SESSION['article_token_time']) && isset($_POST['article_token']))
+                    {
+            
+                        //Si le jeton de la session correspond à celui du formulaire
+                        if(hash_equals($_SESSION['article_token'], $_POST['article_token']))
+                        {
+                            //On stocke le timestamp qu'il était il y a 15 minutes
+                            $timestamp_ancien = time() - (15*60);
+                                //Si le jeton n'est pas expiré
+                                if($_SESSION['article_token_time'] >= $timestamp_ancien)
+                                {
+                                    //Validation des données avant soumission à la BD
+                                    $errors = $this->validation->validate($post, 'Article');
+                                    if (!$errors) {
+                                    $this->articleDAO->addArticle($post, $this->session->getUserInfo('id'));
+                                    //Création d'un message à afficher dans la session
+                                    $this->session->set('add_article', 'Le nouveau post à bien été ajouté');
+                                    //TODO: Redirection vers l'article crée : nécessite de récupérer son id après création
+                                    header('Location: ../public/index.php?route=home');
+                                    } else {
+                                    //Si il y a des erreurs, tjrs en modification avec données et errors en plus
+                                    $this->view->render('add_article', [
+                                        'post' => $post,
+                                        'errors' => $errors
+                                    ]);}
+                                }
+                        }else echo'erreur'; }
             } else {
                 //Si aucune données POST, création d'un article
-                $this->view->render('add_article');
-            }
+                $this->view->render('add_article');}  
         }
     }
 

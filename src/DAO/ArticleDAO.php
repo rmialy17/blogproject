@@ -70,7 +70,7 @@ class ArticleDAO extends DAO
      */
     public function addArticle(Parameter $post, $userId)
     {
-        $sql = 'INSERT INTO article (title, chapo, content, createdAt, user_id) VALUES (?, ?, ?, ?, NOW(), ?)';
+        $sql = 'INSERT INTO article (title, chapo, content, createdAt, user_id) VALUES (?, ?, ?, NOW(), ?)';
         $this->createQuery($sql, [$post->get('title'), $post->get('chapo'),  $post->get('content'),  $userId]);
     }
 
