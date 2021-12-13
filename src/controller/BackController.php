@@ -113,7 +113,7 @@ class BackController extends Controller
         if ($this->checkAdmin()) {
             $this->articleDAO->deleteArticle($articleId);
             //TODO : vérifier si suppression effective pour enregistrer le message dans la session
-            $this->session->set('delete_article', 'Article supprimé avec succès');
+            $this->session->set('delete_article', 'Le blogpost a bien été supprimé');
             header('Location: ../public/index.php?route=administration');
         }
     }
