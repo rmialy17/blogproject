@@ -102,27 +102,47 @@ class FrontController extends Controller
     public function register(Parameter $post)
     {
         //Si formulaire soumis
-        if ($post->get('submit')) {
-            $errors = $this->validation->validate($post, 'User');
-            $checkUser = $this->userDAO->checkUser($post);
-            if ($checkUser) {
-                //Ajoute une erreur avec un message renvoyé par checkUser
-                $errors['pseudo'] = $checkUser;
-                 $this->session->set('error_register', 'Le pseudo existe déjà. Veuillez saisir un nouveau pseudo.');
-                header('Location: ../public/index.php?route=register');
-            }
-            if (!$errors) {
-                $this->userDAO->register($post);
-                $this->session->set('register', 'Votre inscription à bien été effectuée');
-                header('Location: ../public/index.php?route=home');
-                $this->view->render('register', [
-                    'errors' => $errors,
-                    'post' => $post
-                ]);
-            }
+       
+                if (session_status() === PHP_SESSION_NONE)
+                {
+                session_start();} 
+        if ($post->get('submit')) 
+        {     
+                //-----------anti csrf----------//
+                //On va vérifier :
+                //Si le jeton est présent dans la session et dans le formulaire
+                if(isset($_SESSION['register_token']) && isset($_SESSION['register_token_time']) && isset($_POST['register_token']))
+                {
+        
+                    //Si le jeton de la session correspond à celui du formulaire
+                    if(hash_equals($_SESSION['register_token'], $_POST['register_token']))
+                    {
+                        //On stocke le timestamp qu'il était il y a 15 minutes
+                        $timestamp_ancien = time() - (15*60);
+                            //Si le jeton n'est pas expiré
+                            if($_SESSION['register_token_time'] >= $timestamp_ancien)
+                            {
+                                $errors = $this->validation->validate($post, 'User');
+                                $checkUser = $this->userDAO->checkUser($post);
+                                if ($checkUser) {
+                                //Ajoute une erreur avec un message renvoyé par checkUser
+                                $errors['pseudo'] = $checkUser;
+                            }
+                                
+                                if (!$errors) {
+                                $this->userDAO->register($post);
+                                $this->session->set('register', 'Votre inscription à bien été effectuée');
+                                header('Location: ../public/index.php?route=home');
+                                } else {
+                                $this->view->render('register', [
+                                'errors' => $errors,
+                                'post' => $post ]); }
+                            }
+                    }else echo'erreur'; 
+                }  
         } else {
-            $this->view->render('register');
-        }
+        $this->view->render('register'); }
+       
     }
 
     /**
