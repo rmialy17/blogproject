@@ -168,7 +168,20 @@ $_SESSION['token_time'] = time();
                         <div class="col-md-6">
                             <p class="lead">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat excepturi est laboriosam beatae quo provident quae ut vero distinctio ut voluptatem minima.</p>
                             <p class="lead">Ut vitae maxime et iure alias ut quaerat sequi. Rem harum nulla et harum pariatur eos blanditiis sequi aut soluta quia id obcaecati voluptas et harum ipsa est dicta maxime.</p>
-                            <p class="mt30"><a href="../document/CV.pdf"  class="btn btn-primary btn-theme page-scroll "target="blank">Télécharger mon CV</a></p>
+
+                            <p class="mt30">
+                            <!----------upload protection----->
+                            <?php
+                                $pattern="#pdf#";
+                                $fileName="../document/my_private_doc_m_r_cv_fromblog.pdf";
+                                  if(($fileName==="../document/my_private_doc_m_r_cv_fromblog.pdf")&&preg_match($pattern,$fileName,$matches) ){  ?>
+                                 <!-- // Accepter l'upload -->
+                                    <a href="<?php echo $fileName;?>"class="btn btn-primary btn-theme page-scroll "target="blank">Télécharger mon CV</a>
+                                  <?php  }else
+                                 echo 'Format du fichier invalide.';
+                                ?>
+                    
+                            </p>
                         </div>
 
                         <div class="col-md-6">
