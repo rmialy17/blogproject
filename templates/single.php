@@ -112,11 +112,6 @@
                             </div>
                         </div></a>
 
-                               
-       
-            
-        <!-- <a class="btn btn-primary pull-right" href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"style="margin-top: -6%;margin-right: 19%;">Supprimer le commentaire</a></div>-->
-
         <?php 
 
     }
