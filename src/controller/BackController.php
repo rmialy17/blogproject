@@ -258,6 +258,13 @@ class BackController extends Controller
         }
     }
 
+
+    /**
+     * Si données d'ajout de commentaire reçues et données validées, insertion dans BD
+     * Sinon
+     * @param Parameter $post
+     * @param $articleId
+     */
  public function addComment(Parameter $post, $articleId)
     {
         if ($this->checkLoggedIn()) {
@@ -298,16 +305,5 @@ class BackController extends Controller
         header('Location: ../public/index.php?route=home');
     }
 
-
-    // public function updateRole(Parameter $post)
-    // {
-    //         if ($post->get('submit')) {
-    //                 $this->userDAO->updateRole($post);
-    //                 $this->session->set('update_role', 'Le role a bien été modifié');
-    //                 header('Location: ../public/index.php?route=administration');
-    //             } 
-               
-            
-    // }
 
 }
