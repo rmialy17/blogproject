@@ -20,9 +20,7 @@ Dans le fichier config/prod.php modifier les paramètres suivants avec votre ide
 const DB_USER = 'votre_identifiant';
 const DB_PASS = 'votre_mot_de_passe';
 
-Etape 4 : 
-
-Formulaire de contact : 
+Etape 4 : Formulaire de contact : 
 
 SMTP= adresse du serveur smtp de votre operateur (ex: smtp.orange.fr)
 smtp_port = 1025
