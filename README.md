@@ -9,15 +9,20 @@ Installation
 
 Afin de tester le site en local: 
 
-Etape 1: Transférer les fichiers dans le dossier racine de de votre serveur web (généralement "www/").
+Etape 1: 
+Transférer les fichiers dans le dossier racine de de votre serveur web (généralement "www/").
 
-Etape 2 : Créer une base données sur votre SGDB (MySQL) et importer le fichier sql/blog.sql afin d'y créer les différentes tables , les champs et y insérer des données (blog posts , comptes utilisateurs, commentaires …)
+Etape 2 : 
+Créer une base données sur votre SGDB (MySQL) et importer le fichier sql/blog.sql afin d'y créer les différentes tables , les champs et y insérer des données (blog posts , comptes utilisateurs, commentaires …)
 
-Etape 3 : Dans le fichier config/prod.php modifier les paramètres suivants avec votre identifiant et votre mot de passe de connexion à la base de données :
+Etape 3 : 
+Dans le fichier config/prod.php modifier les paramètres suivants avec votre identifiant et votre mot de passe de connexion à la base de données :
 const DB_USER = 'votre_identifiant';
 const DB_PASS = 'votre_mot_de_passe';
 
-Etape 4 : Formulaire de contact : 
+Etape 4 : 
+
+Formulaire de contact : 
 
 SMTP= adresse du serveur smtp de votre operateur (ex: smtp.orange.fr)
 smtp_port = 1025
