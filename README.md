@@ -1,11 +1,11 @@
 
 # blogproject
 
-Configuration
+CONFIGURATION
 
 Le blog a été réalisé sous PHP 7.4.9.
 
-Installation
+INSTALLATION
 
 Afin de tester le site en local: 
 
