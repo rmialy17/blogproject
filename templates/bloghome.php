@@ -58,40 +58,27 @@ $_SESSION['token_time'] = time();
         <nav class="navbar navbar-default navbar-fixed-top fadeInDown" data-wow-delay="0.5s">
             <div class="top-bar smoothie hidden-xs">
                 <div class="container">
-                    <div class="clearfix">
-                        <ul class="list-inline social-links wow pull-left">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="pull-right text-right">
-                            <ul class="list-inline">
+                    <div class="clearfix col-md-11 text-right">
+                        <ul class="list-inline social-links wow">
+                        
                                 <li>
-                                    <div><a href="#contact-tabs"><i class="fa fa-envelope-o"></i> mialy.razaf@gmail.com</a></div>
-                                </li><br>
-                            </ul>
-                            <ul class="list-inline">
+                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
+                                </li>
                                 <li>
-                                </li><br>
+                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li> 
+                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                                </li>
                             </ul>
-                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="container">
@@ -103,8 +90,8 @@ $_SESSION['token_time'] = time();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand smoothie logo logo-light" href="bloghome.html"><img src="assets/img/logo.png"alt="logo"></a>
-                    <a class="navbar-brand smoothie logo logo-dark" href="bloghome.html"><img src="assets/img/logo_reverse.png" alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-light" href="#"><img class="logo-bloghome"src="assets/img/logo/logo_white_large.png"alt="logo"></a>
+                    <a class="navbar-brand smoothie logo logo-dark" href="#"><img class="logo-bloghome"src="assets/img/logo/logo_large.png" alt="logo"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -166,7 +153,8 @@ $_SESSION['token_time'] = time();
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat excepturi est laboriosam beatae quo provident quae ut vero distinctio ut voluptatem minima.</p>
+                            <p class="lead">Je m'appelle Mialy, je suis issue d'un parcours scientifique et ai travaillé plusieurs années chez un éditeur de logiciels. J'effectue actuellement un parcours chez openClassRooms pour développer mes compétences en programmation. 
+
                             <p class="lead">Ut vitae maxime et iure alias ut quaerat sequi. Rem harum nulla et harum pariatur eos blanditiis sequi aut soluta quia id obcaecati voluptas et harum ipsa est dicta maxime.</p>
 
                             <p class="mt30">
@@ -213,27 +201,12 @@ $_SESSION['token_time'] = time();
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
-                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">John Doe</a></h3>
-                                                        <ul class="smoothie list-inline social-links wow">
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-behance"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">GENERAL</a></h3>
+                                                        <p>Organisation
+                                                        <br>Relationnel client
+                                                        <br>Bureautique
+                                                        <br>Priorisation des tâches</p>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -245,27 +218,11 @@ $_SESSION['token_time'] = time();
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
-                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Barry Scott</a></h3>
-                                                        <ul class="smoothie list-inline social-links wow">
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-behance"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Langages</a></h3>
+                                                        <p>HTML & CSS
+                                                        <br>MySQL
+                                                        <br>PHP
+                                                        <br>Symfony</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -277,27 +234,11 @@ $_SESSION['token_time'] = time();
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
-                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Tom Smooth</a></h3>
-                                                        <ul class="smoothie list-inline social-links wow">
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-behance"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Outils</a></h3>
+                                                        <p>Bootstrap
+                                                        <br>Wordpress
+                                                        <br>Git
+                                                        <br>Github</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -309,27 +250,11 @@ $_SESSION['token_time'] = time();
                                                 </div>
                                                 <div class="col-xs-12 hover-item-caption smoothie">
                                                     <div class="vertical-center">
-                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Harvey Wallace</a></h3>
-                                                        <ul class="smoothie list-inline social-links wow">
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-behance"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                        <h3 class="smoothie"><a href="single-portfolio.html" title="view project">Plus</a></h3>
+                                                        <p>Motivation
+                                                        <br>Rigueur
+                                                        <br>Persévérance
+                                                        <br>Veille technologique</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,54 +274,54 @@ $_SESSION['token_time'] = time();
                     <div class="row mb100">
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                                <i class="fa-4x pe-7s-download"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">HTML & CSS</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                              <i class="fa-4x pe-7s-tools"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">MySQL</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                                <i class="fa-4x pe-7s-config"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">PHP & Symfony</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                                <i class="fa-4x pe-7s-settings"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">Git & Github</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                                <i class="fa-4x pe-7s-monitor"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">Bootstrap</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.2s">
                             <div class="icon-box-1 match-height mb30">
-                                <i class="fa-4x pe-7s-camera"></i>
+                                <i class="fa-4x pe-7s-usb"></i>
                                 <div class="content-area">
-                                    <h3 class="title">Web Design</h3>
+                                    <h3 class="title">Wordpress</h3>
                                     <div class="content">Lorem ipsum dolor sit amet. 33 quam rerum hic quod odio id magni enim. Sit impedit enim aut ipsam labore et fugiat </div>
                                 </div>
                             </div>
@@ -424,8 +349,7 @@ $_SESSION['token_time'] = time();
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Chalets & Caviar</a></h3>
-                                            <a href="assets/img/portfolio/portfolio1.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
-                                            <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
+                                            <a href="https://chaletsetcaviar-mialy-rzf.com" title="View Gallery" class="btn btn-primary smoothie" target="_blank">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -437,7 +361,6 @@ $_SESSION['token_time'] = time();
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Les films de plein air</a></h3>
-                                            <a href="assets/img/portfolio/portfolio2.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                             <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
                                         </div>
                                     </div>
@@ -450,7 +373,6 @@ $_SESSION['token_time'] = time();
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Express Food</a></h3>
-                                            <a href="assets/img/portfolio/portfolio3.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                             <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
                                         </div>
                                     </div>
@@ -463,7 +385,6 @@ $_SESSION['token_time'] = time();
                                     <div class="hover-item-caption smoothie">
                                         <div class="vertical-center smoothie">
                                             <h3 class="smoothie mb30"><a href="single-portfolio-fullscreen.html" title="view project">Blog professionnel</a></h3>
-                                            <a href="assets/img/portfolio/portfolio4.jpg" title="View Gallery" class="btn btn-primary lb-link smoothie">Zoom</a>
                                             <a href="single-portfolio-fullscreen.html" class="smoothie btn btn-primary">View</a>
                                         </div>
                                     </div>
@@ -600,22 +521,22 @@ echo $token;
                         <div class="col-sm-8 col-sm-offset-2">
                             <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
                                 <li>
-                                    <img src="assets/img/logo/logo1.png" class="img-responsive" alt="">
+                                    <i class="fa-4x pe-7s-tools"class="img-responsive" alt=""></i>
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo2.png" class="img-responsive" alt="">
+                                    <i class="fa-4x pe-7s-mouse"class="img-responsive" alt=""></i>
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo3.png" class="img-responsive" alt="">
+                                    <i class="fa-4x pe-7s-config"class="img-responsive" alt=""></i>
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo4.png" class="img-responsive" alt="">
+                                   <i class="fa-4x pe-7s-usb"class="img-responsive" alt=""></i>
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo5.png" class="img-responsive" alt="">
+                                    <i class="fa-4x pe-7s-monitor"class="img-responsive" alt=""></i>
                                 </li>
                                 <li>
-                                    <img src="assets/img/logo/logo6.png" class="img-responsive" alt="">
+                                    <i class="fa-4x pe-7s-mouse"class="img-responsive" alt=""></i>
                                 </li>
                             </ul>
                         </div>
@@ -633,65 +554,25 @@ echo $token;
                 <div class="section-inner">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="widget about-us-widget">
-                                    <h4 class="widget-title"><strong>Global</strong> Coverage</h4>
-                                    <p>Professionally monetize team building materials for 24/7 results. Holisticly transition corporate platforms vis-a-vis cutting-edge experiences. Dynamically strategize ubiquitous applications for premier initiatives. Interactively seize resource sucking niche markets.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5 text-right">
                                 <div class="widget">
-                                    <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
-                                    <div>
-                                        <div class="media">
-                                            <div class="pull-left">
-                                                <img class="widget-img" src="assets/img/widget/widget1.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                                <small class="muted">Posted 14 April 2015</small>
-                                            </div>
-                                        </div>
-                                        <div class="media">
-                                            <div class="pull-left">
-                                                <img class="widget-img" src="assets/img/widget/widget2.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                                <small class="muted">Posted 14 April 2015</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <a href="#contact-tabs"><img src="assets/img/enveloppe.png" alt="">
+                                </div>                       
                             </div>
-                            <div class="col-md-4">
-                                <div class="widget">
-                                    <h4 class="widget-title">Popular Tags</h4>
-                                    <div class="tagcloud">
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Local</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Business</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Media</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Photogtraphy</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Aid</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Fashion</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">News</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Cars</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Global Affairs</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Music</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">Downloads</a>
-                                        <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics">MP3</a>
-                                    </div>
+                             <div class="widget about-us-widget">
+                                    <h4 class="widget-title"><strong>contactez-moi</strong></h4>
+                                    <p>mialy.razaf@gmail.com</a></p>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                </div>
             </section>
+    
+
 
             <footer class="white-wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 text-left">
+                        <div class="col-md-7 text-right">
                             <ul class="list-inline social-links wow">
                                 <li>
                                     <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
@@ -709,10 +590,11 @@ echo $token;
                                     <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
+                            
                         </div>
 
-                        <div class="col-md-6 text-right">
-                            <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
+                        <div class="col-md-11 text-right">
+                            <span class="copyright">Copyright 2021 © Mialy RAZAFINDRABE</span>
                         </div>
                     </div>
                 </div>
