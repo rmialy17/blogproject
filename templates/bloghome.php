@@ -62,19 +62,19 @@ $_SESSION['token_time'] = time();
                         <ul class="list-inline social-links wow">
                         
                                 <li>
-                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://twitter.com/?lang=fr"target="_blank"><i class="fa fa-twitter" ></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/rmialy17/"><i class="fa fa-github"></i></a>
+                                    <a href="https://github.com/rmialy17/"target="_blank"><i class="fa fa-github" ></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://fr-fr.facebook.com/"target="_blank"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li> 
-                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://fr.linkedin.com/"target="_blank"><i class="fa fa-linkedin"></i></a>
                                 </li>
                             </ul>
                     </div>
@@ -575,19 +575,19 @@ echo $token;
                         <div class="col-md-7 text-right">
                             <ul class="list-inline social-links wow">
                                 <li>
-                                    <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://twitter.com/?lang=fr"target="_blank"><i class="fa fa-twitter" ></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/rmialy17/"><i class="fa fa-github"></i></a>
+                                    <a href="https://github.com/rmialy17/"target="_blank"><i class="fa fa-github" ></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/?hl=fr"target="_blank"><i class="fa fa-instagram" ></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://fr-fr.facebook.com/"target="_blank"><i class="fa fa-facebook" ></i></a>
                                 </li>
                                 <li> 
-                                    <a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://fr.linkedin.com/"target="_blank"><i class="fa fa-linkedin" ></i></a>
                                 </li>
                             </ul>
                             
