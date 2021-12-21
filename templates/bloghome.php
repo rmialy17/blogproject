@@ -65,7 +65,7 @@ $_SESSION['token_time'] = time();
                                     <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
+                                    <a href="https://github.com/rmialy17/"><i class="fa fa-github"></i></a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
@@ -578,7 +578,7 @@ echo $token;
                                     <a href="https://twitter.com/?lang=fr"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/"><i class="fa fa-github"></i></a>
+                                    <a href="https://github.com/rmialy17/"><i class="fa fa-github"></i></a>
                                 </li>
                                 <li>
                                     <a href="https://www.instagram.com/?hl=fr"><i class="fa fa-instagram"></i></a>
