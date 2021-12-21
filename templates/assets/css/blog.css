@@ -1,7 +1,7 @@
  /*----------------bloghome-----------------*/
 
- #email{
- 	margin-right:9%;
+ #logo{
+ 	margin-top: -10%;
  }
 
 /*.dark-wrapper{
@@ -10,6 +10,11 @@
 	background-repeat: no-repeat;
 	filter: opacity(80%);
 }*/
+
+.logo-bloghome{
+	height: 500%;
+  width: 100%;
+}
 
  /*----------------home---------------------*/
 #shows{
